@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# QUantum Dot Open-source Simulator (QUDOS)
+#
+# Copyright (c) 2025
+# Tommy Murphy and Christopher A. Broderick
+#
+# This file is part of QUDOS.
+#
+# QUDOS is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your discretion) any later version.
+#
+# QUDOS is distributed in the hope that it will be useful, but without any warranty and
+# without an implied warranty of merchantability or fitness for a particular purpose.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with QUDOS.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+# Alternative commercial licensing terms may be available from the copyright holders upon request.
+#
+# 
+#
+# Example PBS job run script that requests 4 nodes with 4 processes per node (tested on Tyndall cluster)
+#
+
+
+#PBS -m bae
+#PBS -N 8_band
+#PBS -q default
+#PBS -l nodes=4:ppn=4
+
+
+# Loading Intel MKL environment variables
+
+source /local/intel2019/bin/compilervars.sh intel64
+
+
+# Disables process placement by the job scheduler to use Hydra instead (comment out if not necessary) 
+
+export I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
+export I_MPI_PIN_DOMAIN=node
+
+
+# One OpenMP thread per process
+
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+
+
+# PBS boilerplate
+
+cd $PBS_O_WORKDIR # job submit directory
+
+
+# Run calculation
+
+mpirun -perhost 4 -np 16 "QUDOS root"/code/build/8_band_pwem.ex
+
+
+# Example call where the number of plane waves are set via input parameters to the command line
+
+#mpirun -perhost 4 -np 16 "QUDOS root"/code/build/8_band_pwem.ex -M_Gx=7 -M_Gy=7 -M_Gz=10 -M_S_Gx=21 -M_S_Gy=21 -M_S_Gz=40 -M_C_Gx=7 -M_C_Gy=7 -M_C_Gz=20

@@ -1,0 +1,70 @@
+Note: The zero of energy is taken at the unstrained valence band edge of the supercell matrix (barrier) material
+
+Temperature =  3.000000e+02 K
+
+Applied electric field = (  0.000000e+00,  0.000000e+00,  0.000000e+00 ) kV/cm 
+
+The full, anisotropic elastic tensor is employed in the strain field calculations
+Computing first and second order piezoelectric potential
+
+Shape 0: Supercell matrix (barrier)
+
+	Material = Al(1.0000)Ga(0.0000)P(0.0000)As(1.0000) 
+
+	Shape = Cuboid
+
+	Centre (x, y, z)         [nm] = (0.0, 0.0, 0.0)
+	Supercell length along x [nm] = 20.0
+	Supercell length along y [nm] = 20.0
+	Supercell length along z [nm] = 20.0
+
+	Strain region supercell length along x [nm] = 20.0000
+	Strain region supercell length along y [nm] = 20.0000
+	Strain region supercell length along z [nm] = 20.0000
+
+	Lattice constant, a [nm] =  5.661100e-01
+
+	Band gap                                   [eV] =  3.003036e+00
+	Spin-orbit-splitting energy                [eV] =  2.800000e-01
+	Modified inverse electron effective mass   [--] =  4.608436e-02
+	Kane parameter                             [eV] =  2.110000e+01
+	First  modified Luttinger parameter        [--] =  1.556805e+00
+	Second modified Luttinger parameter        [--] = -2.815976e-01
+	Third  modified Luttinger parameter        [--] =  3.184024e-01
+
+	Unstrained spin-split-off band edge energy [eV] = -2.800000e-01
+	Unstrained     light-hole band edge energy [eV] =  0.000000e+00
+	Unstrained     heavy-hole band edge energy [eV] =  0.000000e+00
+	Unstrained     conduction band edge energy [eV] =  3.003036e+00
+
+
+Shape 1: Embedded in shape 0
+
+	Material = Al(0.0000)Ga(1.0000)P(0.0000)As(1.0000) 
+
+	Shape = N-sided prism
+
+	Centre (x, y, z) [nm] = (0.0000, 0.0000, 0.0000)
+	Distance from centre of prism base to side = 4.3301
+	                            Height along z = 3.0000
+	                              No. of sides = 3.0000
+	Shape alpha rotation angle (degrees) = 45.0000
+	Shape beta rotation angle (degrees)  = 54.7356
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.650300e-01
+
+	Band gap                                   [eV] =  1.421482e+00
+	Spin-orbit-splitting energy                [eV] =  3.400000e-01
+	Modified inverse electron effective mass   [--] = -9.049696e-01
+	Kane parameter                             [eV] =  2.570000e+01
+	First  modified Luttinger parameter        [--] =  1.848672e+00
+	Second modified Luttinger parameter        [--] = -6.056641e-01
+	Third  modified Luttinger parameter        [--] =  2.843359e-01
+
+	Unstrained spin-split-off band edge energy [eV] =  2.100000e-01
+	Unstrained     light-hole band edge energy [eV] =  5.500000e-01
+	Unstrained     heavy-hole band edge energy [eV] =  5.500000e-01
+	Unstrained     conduction band edge energy [eV] =  1.971482e+00
+
+

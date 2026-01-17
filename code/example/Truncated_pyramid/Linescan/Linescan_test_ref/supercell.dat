@@ -1,0 +1,3140 @@
+Note: The zero of energy is taken at the unstrained valence band edge of the supercell matrix (barrier) material
+
+Temperature =  3.000000e+02 K
+
+Applied electric field = (  0.000000e+00,  0.000000e+00,  0.000000e+00 ) kV/cm 
+
+The full, anisotropic elastic tensor is employed in the strain field calculations
+Computing first and second order piezoelectric potential
+
+Shape 0: Supercell matrix (barrier)
+
+	Material = Al(0.0000)Ga(1.0000)P(0.0000)As(1.0000) 
+
+	Shape = Cuboid
+
+	Centre (x, y, z)         [nm] = (0.0, 0.0, 0.0)
+	Supercell length along x [nm] = 60.0
+	Supercell length along y [nm] = 60.0
+	Supercell length along z [nm] = 35.0
+
+	Strain region supercell length along x [nm] = 180.0000
+	Strain region supercell length along y [nm] = 180.0000
+	Strain region supercell length along z [nm] = 140.0000
+
+	Lattice constant, a [nm] =  5.650300e-01
+
+	Band gap                                   [eV] =  1.421482e+00
+	Spin-orbit-splitting energy                [eV] =  3.400000e-01
+	Modified inverse electron effective mass   [--] = -9.049696e-01
+	Kane parameter                             [eV] =  2.570000e+01
+	First  modified Luttinger parameter        [--] =  1.848672e+00
+	Second modified Luttinger parameter        [--] = -6.056641e-01
+	Third  modified Luttinger parameter        [--] =  2.843359e-01
+
+	Unstrained spin-split-off band edge energy [eV] = -3.400000e-01
+	Unstrained     light-hole band edge energy [eV] =  0.000000e+00
+	Unstrained     heavy-hole band edge energy [eV] =  0.000000e+00
+	Unstrained     conduction band edge energy [eV] =  1.421482e+00
+
+
+Shape 1: Embedded in shape 0
+
+	Material = Ga(0.4975)In(0.5025)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -3.1000)
+	Base half-length along x [nm] = 15.5000
+	Base half-length along y [nm] = 15.5000
+	Top  half-length along x [nm] = 15.4225
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.853813e-01
+
+	Band gap                                   [eV] =  7.596918e-01
+	Spin-orbit-splitting energy                [eV] =  3.226009e-01
+	Modified inverse electron effective mass   [--] = -6.076542e-01
+	Kane parameter                             [eV] =  2.376337e+01
+	First  modified Luttinger parameter        [--] =  3.921372e+00
+	Second modified Luttinger parameter        [--] =  4.784235e-01
+	Third  modified Luttinger parameter        [--] =  1.373449e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.833985e-01
+	Unstrained     light-hole band edge energy [eV] =  3.920246e-02
+	Unstrained     heavy-hole band edge energy [eV] =  3.920246e-02
+	Unstrained     conduction band edge energy [eV] =  7.988942e-01
+
+
+Shape 2: Embedded in shape 0
+
+	Material = Ga(0.4925)In(0.5075)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -3.0380)
+	Base half-length along x [nm] = 15.4225
+	Base half-length along y [nm] = 15.4225
+	Top  half-length along x [nm] = 15.3450
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.855837e-01
+
+	Band gap                                   [eV] =  7.543172e-01
+	Spin-orbit-splitting energy                [eV] =  3.228084e-01
+	Modified inverse electron effective mass   [--] = -6.046958e-01
+	Kane parameter                             [eV] =  2.374410e+01
+	First  modified Luttinger parameter        [--] =  3.941996e+00
+	Second modified Luttinger parameter        [--] =  4.892104e-01
+	Third  modified Luttinger parameter        [--] =  1.384285e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.826634e-01
+	Unstrained     light-hole band edge energy [eV] =  4.014501e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.014501e-02
+	Unstrained     conduction band edge energy [eV] =  7.944622e-01
+
+
+Shape 3: Embedded in shape 0
+
+	Material = Ga(0.4875)In(0.5125)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.9760)
+	Base half-length along x [nm] = 15.3450
+	Base half-length along y [nm] = 15.3450
+	Top  half-length along x [nm] = 15.2675
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.857862e-01
+
+	Band gap                                   [eV] =  7.489664e-01
+	Spin-orbit-splitting energy                [eV] =  3.230234e-01
+	Modified inverse electron effective mass   [--] = -6.017375e-01
+	Kane parameter                             [eV] =  2.372482e+01
+	First  modified Luttinger parameter        [--] =  3.962620e+00
+	Second modified Luttinger parameter        [--] =  4.999974e-01
+	Third  modified Luttinger parameter        [--] =  1.395122e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.819250e-01
+	Unstrained     light-hole band edge energy [eV] =  4.109845e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.109845e-02
+	Unstrained     conduction band edge energy [eV] =  7.900649e-01
+
+
+Shape 4: Embedded in shape 0
+
+	Material = Ga(0.4825)In(0.5175)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.9140)
+	Base half-length along x [nm] = 15.2675
+	Base half-length along y [nm] = 15.2675
+	Top  half-length along x [nm] = 15.1900
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.859888e-01
+
+	Band gap                                   [eV] =  7.436396e-01
+	Spin-orbit-splitting energy                [eV] =  3.232459e-01
+	Modified inverse electron effective mass   [--] = -5.987791e-01
+	Kane parameter                             [eV] =  2.370556e+01
+	First  modified Luttinger parameter        [--] =  3.983244e+00
+	Second modified Luttinger parameter        [--] =  5.107843e-01
+	Third  modified Luttinger parameter        [--] =  1.405959e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.811832e-01
+	Unstrained     light-hole band edge energy [eV] =  4.206278e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.206278e-02
+	Unstrained     conduction band edge energy [eV] =  7.857023e-01
+
+
+Shape 5: Embedded in shape 0
+
+	Material = Ga(0.4775)In(0.5225)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.8520)
+	Base half-length along x [nm] = 15.1900
+	Base half-length along y [nm] = 15.1900
+	Top  half-length along x [nm] = 15.1125
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.861913e-01
+
+	Band gap                                   [eV] =  7.383365e-01
+	Spin-orbit-splitting energy                [eV] =  3.234759e-01
+	Modified inverse electron effective mass   [--] = -5.958207e-01
+	Kane parameter                             [eV] =  2.368628e+01
+	First  modified Luttinger parameter        [--] =  4.003868e+00
+	Second modified Luttinger parameter        [--] =  5.215713e-01
+	Third  modified Luttinger parameter        [--] =  1.416796e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.804379e-01
+	Unstrained     light-hole band edge energy [eV] =  4.303799e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.303799e-02
+	Unstrained     conduction band edge energy [eV] =  7.813745e-01
+
+
+Shape 6: Embedded in shape 0
+
+	Material = Ga(0.4725)In(0.5275)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.7900)
+	Base half-length along x [nm] = 15.1125
+	Base half-length along y [nm] = 15.1125
+	Top  half-length along x [nm] = 15.0350
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.863937e-01
+
+	Band gap                                   [eV] =  7.330573e-01
+	Spin-orbit-splitting energy                [eV] =  3.237134e-01
+	Modified inverse electron effective mass   [--] = -5.928624e-01
+	Kane parameter                             [eV] =  2.366701e+01
+	First  modified Luttinger parameter        [--] =  4.024491e+00
+	Second modified Luttinger parameter        [--] =  5.323582e-01
+	Third  modified Luttinger parameter        [--] =  1.427633e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.796894e-01
+	Unstrained     light-hole band edge energy [eV] =  4.402409e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.402409e-02
+	Unstrained     conduction band edge energy [eV] =  7.770814e-01
+
+
+Shape 7: Embedded in shape 0
+
+	Material = Ga(0.4675)In(0.5325)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.7280)
+	Base half-length along x [nm] = 15.0350
+	Base half-length along y [nm] = 15.0350
+	Top  half-length along x [nm] = 14.9575
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.865963e-01
+
+	Band gap                                   [eV] =  7.278020e-01
+	Spin-orbit-splitting energy                [eV] =  3.239584e-01
+	Modified inverse electron effective mass   [--] = -5.899040e-01
+	Kane parameter                             [eV] =  2.364775e+01
+	First  modified Luttinger parameter        [--] =  4.045115e+00
+	Second modified Luttinger parameter        [--] =  5.431451e-01
+	Third  modified Luttinger parameter        [--] =  1.438470e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.789374e-01
+	Unstrained     light-hole band edge energy [eV] =  4.502107e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.502107e-02
+	Unstrained     conduction band edge energy [eV] =  7.728231e-01
+
+
+Shape 8: Embedded in shape 0
+
+	Material = Ga(0.4625)In(0.5375)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.6660)
+	Base half-length along x [nm] = 14.9575
+	Base half-length along y [nm] = 14.9575
+	Top  half-length along x [nm] = 14.8800
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.867988e-01
+
+	Band gap                                   [eV] =  7.225705e-01
+	Spin-orbit-splitting energy                [eV] =  3.242109e-01
+	Modified inverse electron effective mass   [--] = -5.869456e-01
+	Kane parameter                             [eV] =  2.362848e+01
+	First  modified Luttinger parameter        [--] =  4.065739e+00
+	Second modified Luttinger parameter        [--] =  5.539321e-01
+	Third  modified Luttinger parameter        [--] =  1.449307e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.781820e-01
+	Unstrained     light-hole band edge energy [eV] =  4.602894e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.602894e-02
+	Unstrained     conduction band edge energy [eV] =  7.685994e-01
+
+
+Shape 9: Embedded in shape 0
+
+	Material = Ga(0.4575)In(0.5425)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.6040)
+	Base half-length along x [nm] = 14.8800
+	Base half-length along y [nm] = 14.8800
+	Top  half-length along x [nm] = 14.8025
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.870013e-01
+
+	Band gap                                   [eV] =  7.173628e-01
+	Spin-orbit-splitting energy                [eV] =  3.244709e-01
+	Modified inverse electron effective mass   [--] = -5.839873e-01
+	Kane parameter                             [eV] =  2.360920e+01
+	First  modified Luttinger parameter        [--] =  4.086363e+00
+	Second modified Luttinger parameter        [--] =  5.647190e-01
+	Third  modified Luttinger parameter        [--] =  1.460144e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.774232e-01
+	Unstrained     light-hole band edge energy [eV] =  4.704770e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.704770e-02
+	Unstrained     conduction band edge energy [eV] =  7.644105e-01
+
+
+Shape 10: Embedded in shape 0
+
+	Material = Ga(0.4525)In(0.5475)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.5420)
+	Base half-length along x [nm] = 14.8025
+	Base half-length along y [nm] = 14.8025
+	Top  half-length along x [nm] = 14.7250
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.872037e-01
+
+	Band gap                                   [eV] =  7.121791e-01
+	Spin-orbit-splitting energy                [eV] =  3.247384e-01
+	Modified inverse electron effective mass   [--] = -5.810289e-01
+	Kane parameter                             [eV] =  2.358994e+01
+	First  modified Luttinger parameter        [--] =  4.106987e+00
+	Second modified Luttinger parameter        [--] =  5.755060e-01
+	Third  modified Luttinger parameter        [--] =  1.470981e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.766611e-01
+	Unstrained     light-hole band edge energy [eV] =  4.807734e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.807734e-02
+	Unstrained     conduction band edge energy [eV] =  7.602564e-01
+
+
+Shape 11: Embedded in shape 0
+
+	Material = Ga(0.4475)In(0.5525)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.4800)
+	Base half-length along x [nm] = 14.7250
+	Base half-length along y [nm] = 14.7250
+	Top  half-length along x [nm] = 14.6475
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.874063e-01
+
+	Band gap                                   [eV] =  7.070191e-01
+	Spin-orbit-splitting energy                [eV] =  3.250134e-01
+	Modified inverse electron effective mass   [--] = -5.780706e-01
+	Kane parameter                             [eV] =  2.357066e+01
+	First  modified Luttinger parameter        [--] =  4.127611e+00
+	Second modified Luttinger parameter        [--] =  5.862929e-01
+	Third  modified Luttinger parameter        [--] =  1.481818e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.758956e-01
+	Unstrained     light-hole band edge energy [eV] =  4.911787e-02
+	Unstrained     heavy-hole band edge energy [eV] =  4.911787e-02
+	Unstrained     conduction band edge energy [eV] =  7.561370e-01
+
+
+Shape 12: Embedded in shape 0
+
+	Material = Ga(0.4425)In(0.5575)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.4180)
+	Base half-length along x [nm] = 14.6475
+	Base half-length along y [nm] = 14.6475
+	Top  half-length along x [nm] = 14.5700
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.876088e-01
+
+	Band gap                                   [eV] =  7.018830e-01
+	Spin-orbit-splitting energy                [eV] =  3.252959e-01
+	Modified inverse electron effective mass   [--] = -5.751122e-01
+	Kane parameter                             [eV] =  2.355139e+01
+	First  modified Luttinger parameter        [--] =  4.148235e+00
+	Second modified Luttinger parameter        [--] =  5.970799e-01
+	Third  modified Luttinger parameter        [--] =  1.492655e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.751267e-01
+	Unstrained     light-hole band edge energy [eV] =  5.016929e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.016929e-02
+	Unstrained     conduction band edge energy [eV] =  7.520523e-01
+
+
+Shape 13: Embedded in shape 0
+
+	Material = Ga(0.4375)In(0.5625)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.3560)
+	Base half-length along x [nm] = 14.5700
+	Base half-length along y [nm] = 14.5700
+	Top  half-length along x [nm] = 14.4925
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.878113e-01
+
+	Band gap                                   [eV] =  6.967708e-01
+	Spin-orbit-splitting energy                [eV] =  3.255859e-01
+	Modified inverse electron effective mass   [--] = -5.721538e-01
+	Kane parameter                             [eV] =  2.353213e+01
+	First  modified Luttinger parameter        [--] =  4.168859e+00
+	Second modified Luttinger parameter        [--] =  6.078668e-01
+	Third  modified Luttinger parameter        [--] =  1.503492e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.743543e-01
+	Unstrained     light-hole band edge energy [eV] =  5.123159e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.123159e-02
+	Unstrained     conduction band edge energy [eV] =  7.480024e-01
+
+
+Shape 14: Embedded in shape 0
+
+	Material = Ga(0.4325)In(0.5675)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.2940)
+	Base half-length along x [nm] = 14.4925
+	Base half-length along y [nm] = 14.4925
+	Top  half-length along x [nm] = 14.4150
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.880138e-01
+
+	Band gap                                   [eV] =  6.916824e-01
+	Spin-orbit-splitting energy                [eV] =  3.258834e-01
+	Modified inverse electron effective mass   [--] = -5.691955e-01
+	Kane parameter                             [eV] =  2.351285e+01
+	First  modified Luttinger parameter        [--] =  4.189482e+00
+	Second modified Luttinger parameter        [--] =  6.186537e-01
+	Third  modified Luttinger parameter        [--] =  1.514329e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.735787e-01
+	Unstrained     light-hole band edge energy [eV] =  5.230478e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.230478e-02
+	Unstrained     conduction band edge energy [eV] =  7.439872e-01
+
+
+Shape 15: Embedded in shape 0
+
+	Material = Ga(0.4275)In(0.5725)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.2320)
+	Base half-length along x [nm] = 14.4150
+	Base half-length along y [nm] = 14.4150
+	Top  half-length along x [nm] = 14.3375
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.882162e-01
+
+	Band gap                                   [eV] =  6.866179e-01
+	Spin-orbit-splitting energy                [eV] =  3.261884e-01
+	Modified inverse electron effective mass   [--] = -5.662371e-01
+	Kane parameter                             [eV] =  2.349358e+01
+	First  modified Luttinger parameter        [--] =  4.210106e+00
+	Second modified Luttinger parameter        [--] =  6.294407e-01
+	Third  modified Luttinger parameter        [--] =  1.525166e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.727996e-01
+	Unstrained     light-hole band edge energy [eV] =  5.338885e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.338885e-02
+	Unstrained     conduction band edge energy [eV] =  7.400067e-01
+
+
+Shape 16: Embedded in shape 0
+
+	Material = Ga(0.4225)In(0.5775)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.1700)
+	Base half-length along x [nm] = 14.3375
+	Base half-length along y [nm] = 14.3375
+	Top  half-length along x [nm] = 14.2600
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.884187e-01
+
+	Band gap                                   [eV] =  6.815772e-01
+	Spin-orbit-splitting energy                [eV] =  3.265009e-01
+	Modified inverse electron effective mass   [--] = -5.632787e-01
+	Kane parameter                             [eV] =  2.347432e+01
+	First  modified Luttinger parameter        [--] =  4.230730e+00
+	Second modified Luttinger parameter        [--] =  6.402276e-01
+	Third  modified Luttinger parameter        [--] =  1.536003e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.720171e-01
+	Unstrained     light-hole band edge energy [eV] =  5.448381e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.448381e-02
+	Unstrained     conduction band edge energy [eV] =  7.360610e-01
+
+
+Shape 17: Embedded in shape 0
+
+	Material = Ga(0.4175)In(0.5825)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.1080)
+	Base half-length along x [nm] = 14.2600
+	Base half-length along y [nm] = 14.2600
+	Top  half-length along x [nm] = 14.1825
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.886212e-01
+
+	Band gap                                   [eV] =  6.765603e-01
+	Spin-orbit-splitting energy                [eV] =  3.268209e-01
+	Modified inverse electron effective mass   [--] = -5.603204e-01
+	Kane parameter                             [eV] =  2.345504e+01
+	First  modified Luttinger parameter        [--] =  4.251354e+00
+	Second modified Luttinger parameter        [--] =  6.510146e-01
+	Third  modified Luttinger parameter        [--] =  1.546840e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.712313e-01
+	Unstrained     light-hole band edge energy [eV] =  5.558966e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.558966e-02
+	Unstrained     conduction band edge energy [eV] =  7.321500e-01
+
+
+Shape 18: Embedded in shape 0
+
+	Material = Ga(0.4125)In(0.5875)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -2.0460)
+	Base half-length along x [nm] = 14.1825
+	Base half-length along y [nm] = 14.1825
+	Top  half-length along x [nm] = 14.1050
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.888237e-01
+
+	Band gap                                   [eV] =  6.715673e-01
+	Spin-orbit-splitting energy                [eV] =  3.271484e-01
+	Modified inverse electron effective mass   [--] = -5.573620e-01
+	Kane parameter                             [eV] =  2.343577e+01
+	First  modified Luttinger parameter        [--] =  4.271978e+00
+	Second modified Luttinger parameter        [--] =  6.618015e-01
+	Third  modified Luttinger parameter        [--] =  1.557676e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.704420e-01
+	Unstrained     light-hole band edge energy [eV] =  5.670639e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.670639e-02
+	Unstrained     conduction band edge energy [eV] =  7.282737e-01
+
+
+Shape 19: Embedded in shape 0
+
+	Material = Ga(0.4075)In(0.5925)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.9840)
+	Base half-length along x [nm] = 14.1050
+	Base half-length along y [nm] = 14.1050
+	Top  half-length along x [nm] = 14.0275
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.890262e-01
+
+	Band gap                                   [eV] =  6.665982e-01
+	Spin-orbit-splitting energy                [eV] =  3.274834e-01
+	Modified inverse electron effective mass   [--] = -5.544037e-01
+	Kane parameter                             [eV] =  2.341651e+01
+	First  modified Luttinger parameter        [--] =  4.292602e+00
+	Second modified Luttinger parameter        [--] =  6.725884e-01
+	Third  modified Luttinger parameter        [--] =  1.568513e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.696494e-01
+	Unstrained     light-hole band edge energy [eV] =  5.783401e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.783401e-02
+	Unstrained     conduction band edge energy [eV] =  7.244322e-01
+
+
+Shape 20: Embedded in shape 0
+
+	Material = Ga(0.4025)In(0.5975)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.9220)
+	Base half-length along x [nm] = 14.0275
+	Base half-length along y [nm] = 14.0275
+	Top  half-length along x [nm] = 13.9500
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.892288e-01
+
+	Band gap                                   [eV] =  6.616529e-01
+	Spin-orbit-splitting energy                [eV] =  3.278259e-01
+	Modified inverse electron effective mass   [--] = -5.514453e-01
+	Kane parameter                             [eV] =  2.339723e+01
+	First  modified Luttinger parameter        [--] =  4.313226e+00
+	Second modified Luttinger parameter        [--] =  6.833754e-01
+	Third  modified Luttinger parameter        [--] =  1.579350e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.688534e-01
+	Unstrained     light-hole band edge energy [eV] =  5.897252e-02
+	Unstrained     heavy-hole band edge energy [eV] =  5.897252e-02
+	Unstrained     conduction band edge energy [eV] =  7.206254e-01
+
+
+Shape 21: Embedded in shape 0
+
+	Material = Ga(0.3975)In(0.6025)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.8600)
+	Base half-length along x [nm] = 13.9500
+	Base half-length along y [nm] = 13.9500
+	Top  half-length along x [nm] = 13.8725
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.894312e-01
+
+	Band gap                                   [eV] =  6.567315e-01
+	Spin-orbit-splitting energy                [eV] =  3.281759e-01
+	Modified inverse electron effective mass   [--] = -5.484869e-01
+	Kane parameter                             [eV] =  2.337796e+01
+	First  modified Luttinger parameter        [--] =  4.333850e+00
+	Second modified Luttinger parameter        [--] =  6.941623e-01
+	Third  modified Luttinger parameter        [--] =  1.590187e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.680540e-01
+	Unstrained     light-hole band edge energy [eV] =  6.012191e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.012191e-02
+	Unstrained     conduction band edge energy [eV] =  7.168534e-01
+
+
+Shape 22: Embedded in shape 0
+
+	Material = Ga(0.3925)In(0.6075)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.7980)
+	Base half-length along x [nm] = 13.8725
+	Base half-length along y [nm] = 13.8725
+	Top  half-length along x [nm] = 13.7950
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.896337e-01
+
+	Band gap                                   [eV] =  6.518339e-01
+	Spin-orbit-splitting energy                [eV] =  3.285334e-01
+	Modified inverse electron effective mass   [--] = -5.455286e-01
+	Kane parameter                             [eV] =  2.335870e+01
+	First  modified Luttinger parameter        [--] =  4.354474e+00
+	Second modified Luttinger parameter        [--] =  7.049493e-01
+	Third  modified Luttinger parameter        [--] =  1.601024e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.672512e-01
+	Unstrained     light-hole band edge energy [eV] =  6.128219e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.128219e-02
+	Unstrained     conduction band edge energy [eV] =  7.131161e-01
+
+
+Shape 23: Embedded in shape 0
+
+	Material = Ga(0.3875)In(0.6125)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.7360)
+	Base half-length along x [nm] = 13.7950
+	Base half-length along y [nm] = 13.7950
+	Top  half-length along x [nm] = 13.7175
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.898363e-01
+
+	Band gap                                   [eV] =  6.469601e-01
+	Spin-orbit-splitting energy                [eV] =  3.288984e-01
+	Modified inverse electron effective mass   [--] = -5.425702e-01
+	Kane parameter                             [eV] =  2.333942e+01
+	First  modified Luttinger parameter        [--] =  4.375097e+00
+	Second modified Luttinger parameter        [--] =  7.157362e-01
+	Third  modified Luttinger parameter        [--] =  1.611861e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.664451e-01
+	Unstrained     light-hole band edge energy [eV] =  6.245335e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.245335e-02
+	Unstrained     conduction band edge energy [eV] =  7.094135e-01
+
+
+Shape 24: Embedded in shape 0
+
+	Material = Ga(0.3825)In(0.6175)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.6740)
+	Base half-length along x [nm] = 13.7175
+	Base half-length along y [nm] = 13.7175
+	Top  half-length along x [nm] = 13.6400
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.900388e-01
+
+	Band gap                                   [eV] =  6.421102e-01
+	Spin-orbit-splitting energy                [eV] =  3.292709e-01
+	Modified inverse electron effective mass   [--] = -5.396118e-01
+	Kane parameter                             [eV] =  2.332015e+01
+	First  modified Luttinger parameter        [--] =  4.395721e+00
+	Second modified Luttinger parameter        [--] =  7.265231e-01
+	Third  modified Luttinger parameter        [--] =  1.622698e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.656355e-01
+	Unstrained     light-hole band edge energy [eV] =  6.363541e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.363541e-02
+	Unstrained     conduction band edge energy [eV] =  7.057456e-01
+
+
+Shape 25: Embedded in shape 0
+
+	Material = Ga(0.3775)In(0.6225)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.6120)
+	Base half-length along x [nm] = 13.6400
+	Base half-length along y [nm] = 13.6400
+	Top  half-length along x [nm] = 13.5625
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.902412e-01
+
+	Band gap                                   [eV] =  6.372842e-01
+	Spin-orbit-splitting energy                [eV] =  3.296509e-01
+	Modified inverse electron effective mass   [--] = -5.366535e-01
+	Kane parameter                             [eV] =  2.330089e+01
+	First  modified Luttinger parameter        [--] =  4.416345e+00
+	Second modified Luttinger parameter        [--] =  7.373101e-01
+	Third  modified Luttinger parameter        [--] =  1.633535e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.648226e-01
+	Unstrained     light-hole band edge energy [eV] =  6.482834e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.482834e-02
+	Unstrained     conduction band edge energy [eV] =  7.021125e-01
+
+
+Shape 26: Embedded in shape 0
+
+	Material = Ga(0.3725)In(0.6275)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.5500)
+	Base half-length along x [nm] = 13.5625
+	Base half-length along y [nm] = 13.5625
+	Top  half-length along x [nm] = 13.4850
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.904438e-01
+
+	Band gap                                   [eV] =  6.324820e-01
+	Spin-orbit-splitting energy                [eV] =  3.300384e-01
+	Modified inverse electron effective mass   [--] = -5.336951e-01
+	Kane parameter                             [eV] =  2.328161e+01
+	First  modified Luttinger parameter        [--] =  4.436969e+00
+	Second modified Luttinger parameter        [--] =  7.480970e-01
+	Third  modified Luttinger parameter        [--] =  1.644372e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.640063e-01
+	Unstrained     light-hole band edge energy [eV] =  6.603217e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.603217e-02
+	Unstrained     conduction band edge energy [eV] =  6.985142e-01
+
+
+Shape 27: Embedded in shape 0
+
+	Material = Ga(0.3675)In(0.6325)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.4880)
+	Base half-length along x [nm] = 13.4850
+	Base half-length along y [nm] = 13.4850
+	Top  half-length along x [nm] = 13.4075
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.906463e-01
+
+	Band gap                                   [eV] =  6.277037e-01
+	Spin-orbit-splitting energy                [eV] =  3.304334e-01
+	Modified inverse electron effective mass   [--] = -5.307368e-01
+	Kane parameter                             [eV] =  2.326234e+01
+	First  modified Luttinger parameter        [--] =  4.457593e+00
+	Second modified Luttinger parameter        [--] =  7.588840e-01
+	Third  modified Luttinger parameter        [--] =  1.655209e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.631866e-01
+	Unstrained     light-hole band edge energy [eV] =  6.724688e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.724688e-02
+	Unstrained     conduction band edge energy [eV] =  6.949505e-01
+
+
+Shape 28: Embedded in shape 0
+
+	Material = Ga(0.3625)In(0.6375)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.4260)
+	Base half-length along x [nm] = 13.4075
+	Base half-length along y [nm] = 13.4075
+	Top  half-length along x [nm] = 13.3300
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.908488e-01
+
+	Band gap                                   [eV] =  6.229492e-01
+	Spin-orbit-splitting energy                [eV] =  3.308359e-01
+	Modified inverse electron effective mass   [--] = -5.277784e-01
+	Kane parameter                             [eV] =  2.324308e+01
+	First  modified Luttinger parameter        [--] =  4.478217e+00
+	Second modified Luttinger parameter        [--] =  7.696709e-01
+	Third  modified Luttinger parameter        [--] =  1.666046e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.623635e-01
+	Unstrained     light-hole band edge energy [eV] =  6.847247e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.847247e-02
+	Unstrained     conduction band edge energy [eV] =  6.914216e-01
+
+
+Shape 29: Embedded in shape 0
+
+	Material = Ga(0.3575)In(0.6425)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.3640)
+	Base half-length along x [nm] = 13.3300
+	Base half-length along y [nm] = 13.3300
+	Top  half-length along x [nm] = 13.2525
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.910512e-01
+
+	Band gap                                   [eV] =  6.182185e-01
+	Spin-orbit-splitting energy                [eV] =  3.312459e-01
+	Modified inverse electron effective mass   [--] = -5.248200e-01
+	Kane parameter                             [eV] =  2.322380e+01
+	First  modified Luttinger parameter        [--] =  4.498841e+00
+	Second modified Luttinger parameter        [--] =  7.804579e-01
+	Third  modified Luttinger parameter        [--] =  1.676883e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.615370e-01
+	Unstrained     light-hole band edge energy [eV] =  6.970896e-02
+	Unstrained     heavy-hole band edge energy [eV] =  6.970896e-02
+	Unstrained     conduction band edge energy [eV] =  6.879275e-01
+
+
+Shape 30: Embedded in shape 0
+
+	Material = Ga(0.3525)In(0.6475)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.3020)
+	Base half-length along x [nm] = 13.2525
+	Base half-length along y [nm] = 13.2525
+	Top  half-length along x [nm] = 13.1750
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.912538e-01
+
+	Band gap                                   [eV] =  6.135117e-01
+	Spin-orbit-splitting energy                [eV] =  3.316634e-01
+	Modified inverse electron effective mass   [--] = -5.218617e-01
+	Kane parameter                             [eV] =  2.320453e+01
+	First  modified Luttinger parameter        [--] =  4.519465e+00
+	Second modified Luttinger parameter        [--] =  7.912448e-01
+	Third  modified Luttinger parameter        [--] =  1.687720e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.607071e-01
+	Unstrained     light-hole band edge energy [eV] =  7.095632e-02
+	Unstrained     heavy-hole band edge energy [eV] =  7.095632e-02
+	Unstrained     conduction band edge energy [eV] =  6.844681e-01
+
+
+Shape 31: Embedded in shape 0
+
+	Material = Ga(0.3475)In(0.6525)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.2400)
+	Base half-length along x [nm] = 13.1750
+	Base half-length along y [nm] = 13.1750
+	Top  half-length along x [nm] = 13.0975
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.914563e-01
+
+	Band gap                                   [eV] =  6.088288e-01
+	Spin-orbit-splitting energy                [eV] =  3.320884e-01
+	Modified inverse electron effective mass   [--] = -5.189033e-01
+	Kane parameter                             [eV] =  2.318527e+01
+	First  modified Luttinger parameter        [--] =  4.540088e+00
+	Second modified Luttinger parameter        [--] =  8.020317e-01
+	Third  modified Luttinger parameter        [--] =  1.698557e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.598739e-01
+	Unstrained     light-hole band edge energy [eV] =  7.221458e-02
+	Unstrained     heavy-hole band edge energy [eV] =  7.221458e-02
+	Unstrained     conduction band edge energy [eV] =  6.810434e-01
+
+
+Shape 32: Embedded in shape 0
+
+	Material = Ga(0.3425)In(0.6575)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.1780)
+	Base half-length along x [nm] = 13.0975
+	Base half-length along y [nm] = 13.0975
+	Top  half-length along x [nm] = 13.0200
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.916588e-01
+
+	Band gap                                   [eV] =  6.041697e-01
+	Spin-orbit-splitting energy                [eV] =  3.325209e-01
+	Modified inverse electron effective mass   [--] = -5.159449e-01
+	Kane parameter                             [eV] =  2.316599e+01
+	First  modified Luttinger parameter        [--] =  4.560712e+00
+	Second modified Luttinger parameter        [--] =  8.128187e-01
+	Third  modified Luttinger parameter        [--] =  1.709394e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.590372e-01
+	Unstrained     light-hole band edge energy [eV] =  7.348372e-02
+	Unstrained     heavy-hole band edge energy [eV] =  7.348372e-02
+	Unstrained     conduction band edge energy [eV] =  6.776534e-01
+
+
+Shape 33: Embedded in shape 0
+
+	Material = Ga(0.3375)In(0.6625)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.1160)
+	Base half-length along x [nm] = 13.0200
+	Base half-length along y [nm] = 13.0200
+	Top  half-length along x [nm] = 12.9425
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.918613e-01
+
+	Band gap                                   [eV] =  5.995345e-01
+	Spin-orbit-splitting energy                [eV] =  3.329609e-01
+	Modified inverse electron effective mass   [--] = -5.129866e-01
+	Kane parameter                             [eV] =  2.314672e+01
+	First  modified Luttinger parameter        [--] =  4.581336e+00
+	Second modified Luttinger parameter        [--] =  8.236056e-01
+	Third  modified Luttinger parameter        [--] =  1.720231e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.581972e-01
+	Unstrained     light-hole band edge energy [eV] =  7.476375e-02
+	Unstrained     heavy-hole band edge energy [eV] =  7.476375e-02
+	Unstrained     conduction band edge energy [eV] =  6.742982e-01
+
+
+Shape 34: Embedded in shape 0
+
+	Material = Ga(0.3325)In(0.6675)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -1.0540)
+	Base half-length along x [nm] = 12.9425
+	Base half-length along y [nm] = 12.9425
+	Top  half-length along x [nm] = 12.8650
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.920637e-01
+
+	Band gap                                   [eV] =  5.949231e-01
+	Spin-orbit-splitting energy                [eV] =  3.334084e-01
+	Modified inverse electron effective mass   [--] = -5.100282e-01
+	Kane parameter                             [eV] =  2.312746e+01
+	First  modified Luttinger parameter        [--] =  4.601960e+00
+	Second modified Luttinger parameter        [--] =  8.343926e-01
+	Third  modified Luttinger parameter        [--] =  1.731068e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.573538e-01
+	Unstrained     light-hole band edge energy [eV] =  7.605466e-02
+	Unstrained     heavy-hole band edge energy [eV] =  7.605466e-02
+	Unstrained     conduction band edge energy [eV] =  6.709777e-01
+
+
+Shape 35: Embedded in shape 0
+
+	Material = Ga(0.3275)In(0.6725)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.9920)
+	Base half-length along x [nm] = 12.8650
+	Base half-length along y [nm] = 12.8650
+	Top  half-length along x [nm] = 12.7875
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.922662e-01
+
+	Band gap                                   [eV] =  5.903355e-01
+	Spin-orbit-splitting energy                [eV] =  3.338634e-01
+	Modified inverse electron effective mass   [--] = -5.070699e-01
+	Kane parameter                             [eV] =  2.310818e+01
+	First  modified Luttinger parameter        [--] =  4.622584e+00
+	Second modified Luttinger parameter        [--] =  8.451795e-01
+	Third  modified Luttinger parameter        [--] =  1.741904e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.565070e-01
+	Unstrained     light-hole band edge energy [eV] =  7.735646e-02
+	Unstrained     heavy-hole band edge energy [eV] =  7.735646e-02
+	Unstrained     conduction band edge energy [eV] =  6.676920e-01
+
+
+Shape 36: Embedded in shape 0
+
+	Material = Ga(0.3225)In(0.6775)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.9300)
+	Base half-length along x [nm] = 12.7875
+	Base half-length along y [nm] = 12.7875
+	Top  half-length along x [nm] = 12.7100
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.924687e-01
+
+	Band gap                                   [eV] =  5.857718e-01
+	Spin-orbit-splitting energy                [eV] =  3.343259e-01
+	Modified inverse electron effective mass   [--] = -5.041115e-01
+	Kane parameter                             [eV] =  2.308892e+01
+	First  modified Luttinger parameter        [--] =  4.643208e+00
+	Second modified Luttinger parameter        [--] =  8.559664e-01
+	Third  modified Luttinger parameter        [--] =  1.752741e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.556568e-01
+	Unstrained     light-hole band edge energy [eV] =  7.866915e-02
+	Unstrained     heavy-hole band edge energy [eV] =  7.866915e-02
+	Unstrained     conduction band edge energy [eV] =  6.644410e-01
+
+
+Shape 37: Embedded in shape 0
+
+	Material = Ga(0.3175)In(0.6825)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.8680)
+	Base half-length along x [nm] = 12.7100
+	Base half-length along y [nm] = 12.7100
+	Top  half-length along x [nm] = 12.6325
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.926712e-01
+
+	Band gap                                   [eV] =  5.812320e-01
+	Spin-orbit-splitting energy                [eV] =  3.347959e-01
+	Modified inverse electron effective mass   [--] = -5.011531e-01
+	Kane parameter                             [eV] =  2.306965e+01
+	First  modified Luttinger parameter        [--] =  4.663832e+00
+	Second modified Luttinger parameter        [--] =  8.667534e-01
+	Third  modified Luttinger parameter        [--] =  1.763578e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.548032e-01
+	Unstrained     light-hole band edge energy [eV] =  7.999272e-02
+	Unstrained     heavy-hole band edge energy [eV] =  7.999272e-02
+	Unstrained     conduction band edge energy [eV] =  6.612247e-01
+
+
+Shape 38: Embedded in shape 0
+
+	Material = Ga(0.3125)In(0.6875)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.8060)
+	Base half-length along x [nm] = 12.6325
+	Base half-length along y [nm] = 12.6325
+	Top  half-length along x [nm] = 12.5550
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.928737e-01
+
+	Band gap                                   [eV] =  5.767160e-01
+	Spin-orbit-splitting energy                [eV] =  3.352734e-01
+	Modified inverse electron effective mass   [--] = -4.981948e-01
+	Kane parameter                             [eV] =  2.305037e+01
+	First  modified Luttinger parameter        [--] =  4.684456e+00
+	Second modified Luttinger parameter        [--] =  8.775403e-01
+	Third  modified Luttinger parameter        [--] =  1.774415e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.539463e-01
+	Unstrained     light-hole band edge energy [eV] =  8.132718e-02
+	Unstrained     heavy-hole band edge energy [eV] =  8.132718e-02
+	Unstrained     conduction band edge energy [eV] =  6.580432e-01
+
+
+Shape 39: Embedded in shape 0
+
+	Material = Ga(0.3075)In(0.6925)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.7440)
+	Base half-length along x [nm] = 12.5550
+	Base half-length along y [nm] = 12.5550
+	Top  half-length along x [nm] = 12.4775
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.930763e-01
+
+	Band gap                                   [eV] =  5.722239e-01
+	Spin-orbit-splitting energy                [eV] =  3.357584e-01
+	Modified inverse electron effective mass   [--] = -4.952364e-01
+	Kane parameter                             [eV] =  2.303111e+01
+	First  modified Luttinger parameter        [--] =  4.705080e+00
+	Second modified Luttinger parameter        [--] =  8.883273e-01
+	Third  modified Luttinger parameter        [--] =  1.785252e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.530859e-01
+	Unstrained     light-hole band edge energy [eV] =  8.267253e-02
+	Unstrained     heavy-hole band edge energy [eV] =  8.267253e-02
+	Unstrained     conduction band edge energy [eV] =  6.548964e-01
+
+
+Shape 40: Embedded in shape 0
+
+	Material = Ga(0.3025)In(0.6975)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.6820)
+	Base half-length along x [nm] = 12.4775
+	Base half-length along y [nm] = 12.4775
+	Top  half-length along x [nm] = 12.4000
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.932787e-01
+
+	Band gap                                   [eV] =  5.677556e-01
+	Spin-orbit-splitting energy                [eV] =  3.362509e-01
+	Modified inverse electron effective mass   [--] = -4.922780e-01
+	Kane parameter                             [eV] =  2.301184e+01
+	First  modified Luttinger parameter        [--] =  4.725703e+00
+	Second modified Luttinger parameter        [--] =  8.991142e-01
+	Third  modified Luttinger parameter        [--] =  1.796089e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.522222e-01
+	Unstrained     light-hole band edge energy [eV] =  8.402876e-02
+	Unstrained     heavy-hole band edge energy [eV] =  8.402876e-02
+	Unstrained     conduction band edge energy [eV] =  6.517843e-01
+
+
+Shape 41: Embedded in shape 0
+
+	Material = Ga(0.2975)In(0.7025)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.6200)
+	Base half-length along x [nm] = 12.4000
+	Base half-length along y [nm] = 12.4000
+	Top  half-length along x [nm] = 12.3225
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.934812e-01
+
+	Band gap                                   [eV] =  5.633111e-01
+	Spin-orbit-splitting energy                [eV] =  3.367509e-01
+	Modified inverse electron effective mass   [--] = -4.893197e-01
+	Kane parameter                             [eV] =  2.299256e+01
+	First  modified Luttinger parameter        [--] =  4.746327e+00
+	Second modified Luttinger parameter        [--] =  9.099011e-01
+	Third  modified Luttinger parameter        [--] =  1.806926e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.513551e-01
+	Unstrained     light-hole band edge energy [eV] =  8.539588e-02
+	Unstrained     heavy-hole band edge energy [eV] =  8.539588e-02
+	Unstrained     conduction band edge energy [eV] =  6.487070e-01
+
+
+Shape 42: Embedded in shape 0
+
+	Material = Ga(0.2925)In(0.7075)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.5580)
+	Base half-length along x [nm] = 12.3225
+	Base half-length along y [nm] = 12.3225
+	Top  half-length along x [nm] = 12.2450
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.936838e-01
+
+	Band gap                                   [eV] =  5.588905e-01
+	Spin-orbit-splitting energy                [eV] =  3.372584e-01
+	Modified inverse electron effective mass   [--] = -4.863613e-01
+	Kane parameter                             [eV] =  2.297330e+01
+	First  modified Luttinger parameter        [--] =  4.766951e+00
+	Second modified Luttinger parameter        [--] =  9.206881e-01
+	Third  modified Luttinger parameter        [--] =  1.817763e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.504846e-01
+	Unstrained     light-hole band edge energy [eV] =  8.677388e-02
+	Unstrained     heavy-hole band edge energy [eV] =  8.677388e-02
+	Unstrained     conduction band edge energy [eV] =  6.456644e-01
+
+
+Shape 43: Embedded in shape 0
+
+	Material = Ga(0.2875)In(0.7125)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.4960)
+	Base half-length along x [nm] = 12.2450
+	Base half-length along y [nm] = 12.2450
+	Top  half-length along x [nm] = 12.1675
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.938863e-01
+
+	Band gap                                   [eV] =  5.544938e-01
+	Spin-orbit-splitting energy                [eV] =  3.377734e-01
+	Modified inverse electron effective mass   [--] = -4.834030e-01
+	Kane parameter                             [eV] =  2.295403e+01
+	First  modified Luttinger parameter        [--] =  4.787575e+00
+	Second modified Luttinger parameter        [--] =  9.314750e-01
+	Third  modified Luttinger parameter        [--] =  1.828600e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.496107e-01
+	Unstrained     light-hole band edge energy [eV] =  8.816277e-02
+	Unstrained     heavy-hole band edge energy [eV] =  8.816277e-02
+	Unstrained     conduction band edge energy [eV] =  6.426566e-01
+
+
+Shape 44: Embedded in shape 0
+
+	Material = Ga(0.2825)In(0.7175)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.4340)
+	Base half-length along x [nm] = 12.1675
+	Base half-length along y [nm] = 12.1675
+	Top  half-length along x [nm] = 12.0900
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.940887e-01
+
+	Band gap                                   [eV] =  5.501209e-01
+	Spin-orbit-splitting energy                [eV] =  3.382959e-01
+	Modified inverse electron effective mass   [--] = -4.804446e-01
+	Kane parameter                             [eV] =  2.293475e+01
+	First  modified Luttinger parameter        [--] =  4.808199e+00
+	Second modified Luttinger parameter        [--] =  9.422620e-01
+	Third  modified Luttinger parameter        [--] =  1.839437e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.487334e-01
+	Unstrained     light-hole band edge energy [eV] =  8.956255e-02
+	Unstrained     heavy-hole band edge energy [eV] =  8.956255e-02
+	Unstrained     conduction band edge energy [eV] =  6.396835e-01
+
+
+Shape 45: Embedded in shape 0
+
+	Material = Ga(0.2775)In(0.7225)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.3720)
+	Base half-length along x [nm] = 12.0900
+	Base half-length along y [nm] = 12.0900
+	Top  half-length along x [nm] = 12.0125
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.942913e-01
+
+	Band gap                                   [eV] =  5.457719e-01
+	Spin-orbit-splitting energy                [eV] =  3.388259e-01
+	Modified inverse electron effective mass   [--] = -4.774862e-01
+	Kane parameter                             [eV] =  2.291549e+01
+	First  modified Luttinger parameter        [--] =  4.828823e+00
+	Second modified Luttinger parameter        [--] =  9.530489e-01
+	Third  modified Luttinger parameter        [--] =  1.850274e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.478527e-01
+	Unstrained     light-hole band edge energy [eV] =  9.097321e-02
+	Unstrained     heavy-hole band edge energy [eV] =  9.097321e-02
+	Unstrained     conduction band edge energy [eV] =  6.367451e-01
+
+
+Shape 46: Embedded in shape 0
+
+	Material = Ga(0.2725)In(0.7275)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.3100)
+	Base half-length along x [nm] = 12.0125
+	Base half-length along y [nm] = 12.0125
+	Top  half-length along x [nm] = 11.9350
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.944938e-01
+
+	Band gap                                   [eV] =  5.414467e-01
+	Spin-orbit-splitting energy                [eV] =  3.393634e-01
+	Modified inverse electron effective mass   [--] = -4.745279e-01
+	Kane parameter                             [eV] =  2.289622e+01
+	First  modified Luttinger parameter        [--] =  4.849447e+00
+	Second modified Luttinger parameter        [--] =  9.638358e-01
+	Third  modified Luttinger parameter        [--] =  1.861111e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.469687e-01
+	Unstrained     light-hole band edge energy [eV] =  9.239476e-02
+	Unstrained     heavy-hole band edge energy [eV] =  9.239476e-02
+	Unstrained     conduction band edge energy [eV] =  6.338414e-01
+
+
+Shape 47: Embedded in shape 0
+
+	Material = Ga(0.2675)In(0.7325)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.2480)
+	Base half-length along x [nm] = 11.9350
+	Base half-length along y [nm] = 11.9350
+	Top  half-length along x [nm] = 11.8575
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.946963e-01
+
+	Band gap                                   [eV] =  5.371453e-01
+	Spin-orbit-splitting energy                [eV] =  3.399084e-01
+	Modified inverse electron effective mass   [--] = -4.715695e-01
+	Kane parameter                             [eV] =  2.287694e+01
+	First  modified Luttinger parameter        [--] =  4.870071e+00
+	Second modified Luttinger parameter        [--] =  9.746228e-01
+	Third  modified Luttinger parameter        [--] =  1.871948e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.460812e-01
+	Unstrained     light-hole band edge energy [eV] =  9.382719e-02
+	Unstrained     heavy-hole band edge energy [eV] =  9.382719e-02
+	Unstrained     conduction band edge energy [eV] =  6.309725e-01
+
+
+Shape 48: Embedded in shape 0
+
+	Material = Ga(0.2625)In(0.7375)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.1860)
+	Base half-length along x [nm] = 11.8575
+	Base half-length along y [nm] = 11.8575
+	Top  half-length along x [nm] = 11.7800
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.948987e-01
+
+	Band gap                                   [eV] =  5.328678e-01
+	Spin-orbit-splitting energy                [eV] =  3.404609e-01
+	Modified inverse electron effective mass   [--] = -4.686111e-01
+	Kane parameter                             [eV] =  2.285768e+01
+	First  modified Luttinger parameter        [--] =  4.890694e+00
+	Second modified Luttinger parameter        [--] =  9.854097e-01
+	Third  modified Luttinger parameter        [--] =  1.882785e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.451904e-01
+	Unstrained     light-hole band edge energy [eV] =  9.527052e-02
+	Unstrained     heavy-hole band edge energy [eV] =  9.527052e-02
+	Unstrained     conduction band edge energy [eV] =  6.281384e-01
+
+
+Shape 49: Embedded in shape 0
+
+	Material = Ga(0.2575)In(0.7425)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.1240)
+	Base half-length along x [nm] = 11.7800
+	Base half-length along y [nm] = 11.7800
+	Top  half-length along x [nm] = 11.7025
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.951013e-01
+
+	Band gap                                   [eV] =  5.286142e-01
+	Spin-orbit-splitting energy                [eV] =  3.410209e-01
+	Modified inverse electron effective mass   [--] = -4.656528e-01
+	Kane parameter                             [eV] =  2.283841e+01
+	First  modified Luttinger parameter        [--] =  4.911318e+00
+	Second modified Luttinger parameter        [--] =  9.961967e-01
+	Third  modified Luttinger parameter        [--] =  1.893622e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.442962e-01
+	Unstrained     light-hole band edge energy [eV] =  9.672472e-02
+	Unstrained     heavy-hole band edge energy [eV] =  9.672472e-02
+	Unstrained     conduction band edge energy [eV] =  6.253389e-01
+
+
+Shape 50: Embedded in shape 0
+
+	Material = Ga(0.2525)In(0.7475)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, -0.0620)
+	Base half-length along x [nm] = 11.7025
+	Base half-length along y [nm] = 11.7025
+	Top  half-length along x [nm] = 11.6250
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.953038e-01
+
+	Band gap                                   [eV] =  5.243844e-01
+	Spin-orbit-splitting energy                [eV] =  3.415884e-01
+	Modified inverse electron effective mass   [--] = -4.626944e-01
+	Kane parameter                             [eV] =  2.281913e+01
+	First  modified Luttinger parameter        [--] =  4.931942e+00
+	Second modified Luttinger parameter        [--] =  1.006984e+00
+	Third  modified Luttinger parameter        [--] =  1.904459e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.433986e-01
+	Unstrained     light-hole band edge energy [eV] =  9.818982e-02
+	Unstrained     heavy-hole band edge energy [eV] =  9.818982e-02
+	Unstrained     conduction band edge energy [eV] =  6.225742e-01
+
+
+Shape 51: Embedded in shape 0
+
+	Material = Ga(0.2475)In(0.7525)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.0000)
+	Base half-length along x [nm] = 11.6250
+	Base half-length along y [nm] = 11.6250
+	Top  half-length along x [nm] = 11.5475
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.955063e-01
+
+	Band gap                                   [eV] =  5.201785e-01
+	Spin-orbit-splitting energy                [eV] =  3.421634e-01
+	Modified inverse electron effective mass   [--] = -4.597361e-01
+	Kane parameter                             [eV] =  2.279987e+01
+	First  modified Luttinger parameter        [--] =  4.952566e+00
+	Second modified Luttinger parameter        [--] =  1.017771e+00
+	Third  modified Luttinger parameter        [--] =  1.915296e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.424976e-01
+	Unstrained     light-hole band edge energy [eV] =  9.966580e-02
+	Unstrained     heavy-hole band edge energy [eV] =  9.966580e-02
+	Unstrained     conduction band edge energy [eV] =  6.198443e-01
+
+
+Shape 52: Embedded in shape 0
+
+	Material = Ga(0.2425)In(0.7575)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.0620)
+	Base half-length along x [nm] = 11.5475
+	Base half-length along y [nm] = 11.5475
+	Top  half-length along x [nm] = 11.4700
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.957088e-01
+
+	Band gap                                   [eV] =  5.159964e-01
+	Spin-orbit-splitting energy                [eV] =  3.427459e-01
+	Modified inverse electron effective mass   [--] = -4.567777e-01
+	Kane parameter                             [eV] =  2.278059e+01
+	First  modified Luttinger parameter        [--] =  4.973190e+00
+	Second modified Luttinger parameter        [--] =  1.028557e+00
+	Third  modified Luttinger parameter        [--] =  1.926132e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.415933e-01
+	Unstrained     light-hole band edge energy [eV] =  1.011527e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.011527e-01
+	Unstrained     conduction band edge energy [eV] =  6.171490e-01
+
+
+Shape 53: Embedded in shape 0
+
+	Material = Ga(0.2375)In(0.7625)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.1240)
+	Base half-length along x [nm] = 11.4700
+	Base half-length along y [nm] = 11.4700
+	Top  half-length along x [nm] = 11.3925
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.959113e-01
+
+	Band gap                                   [eV] =  5.118381e-01
+	Spin-orbit-splitting energy                [eV] =  3.433359e-01
+	Modified inverse electron effective mass   [--] = -4.538193e-01
+	Kane parameter                             [eV] =  2.276132e+01
+	First  modified Luttinger parameter        [--] =  4.993814e+00
+	Second modified Luttinger parameter        [--] =  1.039344e+00
+	Third  modified Luttinger parameter        [--] =  1.936969e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.406855e-01
+	Unstrained     light-hole band edge energy [eV] =  1.026504e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.026504e-01
+	Unstrained     conduction band edge energy [eV] =  6.144886e-01
+
+
+Shape 54: Embedded in shape 0
+
+	Material = Ga(0.2325)In(0.7675)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.1860)
+	Base half-length along x [nm] = 11.3925
+	Base half-length along y [nm] = 11.3925
+	Top  half-length along x [nm] = 11.3150
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.961137e-01
+
+	Band gap                                   [eV] =  5.077037e-01
+	Spin-orbit-splitting energy                [eV] =  3.439334e-01
+	Modified inverse electron effective mass   [--] = -4.508610e-01
+	Kane parameter                             [eV] =  2.274206e+01
+	First  modified Luttinger parameter        [--] =  5.014438e+00
+	Second modified Luttinger parameter        [--] =  1.050131e+00
+	Third  modified Luttinger parameter        [--] =  1.947806e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.397744e-01
+	Unstrained     light-hole band edge energy [eV] =  1.041591e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.041591e-01
+	Unstrained     conduction band edge energy [eV] =  6.118628e-01
+
+
+Shape 55: Embedded in shape 0
+
+	Material = Ga(0.2275)In(0.7725)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.2480)
+	Base half-length along x [nm] = 11.3150
+	Base half-length along y [nm] = 11.3150
+	Top  half-length along x [nm] = 11.2375
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.963162e-01
+
+	Band gap                                   [eV] =  5.035932e-01
+	Spin-orbit-splitting energy                [eV] =  3.445384e-01
+	Modified inverse electron effective mass   [--] = -4.479026e-01
+	Kane parameter                             [eV] =  2.272278e+01
+	First  modified Luttinger parameter        [--] =  5.035062e+00
+	Second modified Luttinger parameter        [--] =  1.060918e+00
+	Third  modified Luttinger parameter        [--] =  1.958643e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.388599e-01
+	Unstrained     light-hole band edge energy [eV] =  1.056786e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.056786e-01
+	Unstrained     conduction band edge energy [eV] =  6.092718e-01
+
+
+Shape 56: Embedded in shape 0
+
+	Material = Ga(0.2225)In(0.7775)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.3100)
+	Base half-length along x [nm] = 11.2375
+	Base half-length along y [nm] = 11.2375
+	Top  half-length along x [nm] = 11.1600
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.965187e-01
+
+	Band gap                                   [eV] =  4.995065e-01
+	Spin-orbit-splitting energy                [eV] =  3.451509e-01
+	Modified inverse electron effective mass   [--] = -4.449442e-01
+	Kane parameter                             [eV] =  2.270351e+01
+	First  modified Luttinger parameter        [--] =  5.055686e+00
+	Second modified Luttinger parameter        [--] =  1.071705e+00
+	Third  modified Luttinger parameter        [--] =  1.969480e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.379419e-01
+	Unstrained     light-hole band edge energy [eV] =  1.072090e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.072090e-01
+	Unstrained     conduction band edge energy [eV] =  6.067155e-01
+
+
+Shape 57: Embedded in shape 0
+
+	Material = Ga(0.2175)In(0.7825)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.3720)
+	Base half-length along x [nm] = 11.1600
+	Base half-length along y [nm] = 11.1600
+	Top  half-length along x [nm] = 11.0825
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.967212e-01
+
+	Band gap                                   [eV] =  4.954437e-01
+	Spin-orbit-splitting energy                [eV] =  3.457709e-01
+	Modified inverse electron effective mass   [--] = -4.419859e-01
+	Kane parameter                             [eV] =  2.268425e+01
+	First  modified Luttinger parameter        [--] =  5.076309e+00
+	Second modified Luttinger parameter        [--] =  1.082492e+00
+	Third  modified Luttinger parameter        [--] =  1.980317e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.370206e-01
+	Unstrained     light-hole band edge energy [eV] =  1.087503e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.087503e-01
+	Unstrained     conduction band edge energy [eV] =  6.041940e-01
+
+
+Shape 58: Embedded in shape 0
+
+	Material = Ga(0.2125)In(0.7875)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.4340)
+	Base half-length along x [nm] = 11.0825
+	Base half-length along y [nm] = 11.0825
+	Top  half-length along x [nm] = 11.0050
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.969238e-01
+
+	Band gap                                   [eV] =  4.914047e-01
+	Spin-orbit-splitting energy                [eV] =  3.463984e-01
+	Modified inverse electron effective mass   [--] = -4.390275e-01
+	Kane parameter                             [eV] =  2.266497e+01
+	First  modified Luttinger parameter        [--] =  5.096933e+00
+	Second modified Luttinger parameter        [--] =  1.093279e+00
+	Third  modified Luttinger parameter        [--] =  1.991154e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.360960e-01
+	Unstrained     light-hole band edge energy [eV] =  1.103025e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.103025e-01
+	Unstrained     conduction band edge energy [eV] =  6.017072e-01
+
+
+Shape 59: Embedded in shape 0
+
+	Material = Ga(0.2075)In(0.7925)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.4960)
+	Base half-length along x [nm] = 11.0050
+	Base half-length along y [nm] = 11.0050
+	Top  half-length along x [nm] = 10.9275
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.971262e-01
+
+	Band gap                                   [eV] =  4.873895e-01
+	Spin-orbit-splitting energy                [eV] =  3.470334e-01
+	Modified inverse electron effective mass   [--] = -4.360692e-01
+	Kane parameter                             [eV] =  2.264570e+01
+	First  modified Luttinger parameter        [--] =  5.117557e+00
+	Second modified Luttinger parameter        [--] =  1.104066e+00
+	Third  modified Luttinger parameter        [--] =  2.001991e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.351679e-01
+	Unstrained     light-hole band edge energy [eV] =  1.118656e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.118656e-01
+	Unstrained     conduction band edge energy [eV] =  5.992551e-01
+
+
+Shape 60: Embedded in shape 0
+
+	Material = Ga(0.2025)In(0.7975)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.5580)
+	Base half-length along x [nm] = 10.9275
+	Base half-length along y [nm] = 10.9275
+	Top  half-length along x [nm] = 10.8500
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.973287e-01
+
+	Band gap                                   [eV] =  4.833982e-01
+	Spin-orbit-splitting energy                [eV] =  3.476759e-01
+	Modified inverse electron effective mass   [--] = -4.331108e-01
+	Kane parameter                             [eV] =  2.262644e+01
+	First  modified Luttinger parameter        [--] =  5.138181e+00
+	Second modified Luttinger parameter        [--] =  1.114853e+00
+	Third  modified Luttinger parameter        [--] =  2.012828e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.342364e-01
+	Unstrained     light-hole band edge energy [eV] =  1.134395e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.134395e-01
+	Unstrained     conduction band edge energy [eV] =  5.968378e-01
+
+
+Shape 61: Embedded in shape 0
+
+	Material = Ga(0.1975)In(0.8025)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.6200)
+	Base half-length along x [nm] = 10.8500
+	Base half-length along y [nm] = 10.8500
+	Top  half-length along x [nm] = 10.7725
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.975313e-01
+
+	Band gap                                   [eV] =  4.794308e-01
+	Spin-orbit-splitting energy                [eV] =  3.483259e-01
+	Modified inverse electron effective mass   [--] = -4.301524e-01
+	Kane parameter                             [eV] =  2.260716e+01
+	First  modified Luttinger parameter        [--] =  5.158805e+00
+	Second modified Luttinger parameter        [--] =  1.125640e+00
+	Third  modified Luttinger parameter        [--] =  2.023665e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.333016e-01
+	Unstrained     light-hole band edge energy [eV] =  1.150244e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.150244e-01
+	Unstrained     conduction band edge energy [eV] =  5.944552e-01
+
+
+Shape 62: Embedded in shape 0
+
+	Material = Ga(0.1925)In(0.8075)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.6820)
+	Base half-length along x [nm] = 10.7725
+	Base half-length along y [nm] = 10.7725
+	Top  half-length along x [nm] = 10.6950
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.977338e-01
+
+	Band gap                                   [eV] =  4.754872e-01
+	Spin-orbit-splitting energy                [eV] =  3.489834e-01
+	Modified inverse electron effective mass   [--] = -4.271941e-01
+	Kane parameter                             [eV] =  2.258789e+01
+	First  modified Luttinger parameter        [--] =  5.179429e+00
+	Second modified Luttinger parameter        [--] =  1.136427e+00
+	Third  modified Luttinger parameter        [--] =  2.034502e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.323634e-01
+	Unstrained     light-hole band edge energy [eV] =  1.166201e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.166201e-01
+	Unstrained     conduction band edge energy [eV] =  5.921073e-01
+
+
+Shape 63: Embedded in shape 0
+
+	Material = Ga(0.1875)In(0.8125)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.7440)
+	Base half-length along x [nm] = 10.6950
+	Base half-length along y [nm] = 10.6950
+	Top  half-length along x [nm] = 10.6175
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.979362e-01
+
+	Band gap                                   [eV] =  4.715675e-01
+	Spin-orbit-splitting energy                [eV] =  3.496484e-01
+	Modified inverse electron effective mass   [--] = -4.242357e-01
+	Kane parameter                             [eV] =  2.256863e+01
+	First  modified Luttinger parameter        [--] =  5.200053e+00
+	Second modified Luttinger parameter        [--] =  1.147214e+00
+	Third  modified Luttinger parameter        [--] =  2.045339e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.314217e-01
+	Unstrained     light-hole band edge energy [eV] =  1.182267e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.182267e-01
+	Unstrained     conduction band edge energy [eV] =  5.897942e-01
+
+
+Shape 64: Embedded in shape 0
+
+	Material = Ga(0.1825)In(0.8175)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.8060)
+	Base half-length along x [nm] = 10.6175
+	Base half-length along y [nm] = 10.6175
+	Top  half-length along x [nm] = 10.5400
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.981388e-01
+
+	Band gap                                   [eV] =  4.676716e-01
+	Spin-orbit-splitting energy                [eV] =  3.503209e-01
+	Modified inverse electron effective mass   [--] = -4.212773e-01
+	Kane parameter                             [eV] =  2.254935e+01
+	First  modified Luttinger parameter        [--] =  5.220677e+00
+	Second modified Luttinger parameter        [--] =  1.158001e+00
+	Third  modified Luttinger parameter        [--] =  2.056176e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.304767e-01
+	Unstrained     light-hole band edge energy [eV] =  1.198442e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.198442e-01
+	Unstrained     conduction band edge energy [eV] =  5.875158e-01
+
+
+Shape 65: Embedded in shape 0
+
+	Material = Ga(0.1775)In(0.8225)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.8680)
+	Base half-length along x [nm] = 10.5400
+	Base half-length along y [nm] = 10.5400
+	Top  half-length along x [nm] = 10.4625
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.983413e-01
+
+	Band gap                                   [eV] =  4.637995e-01
+	Spin-orbit-splitting energy                [eV] =  3.510009e-01
+	Modified inverse electron effective mass   [--] = -4.183190e-01
+	Kane parameter                             [eV] =  2.253008e+01
+	First  modified Luttinger parameter        [--] =  5.241300e+00
+	Second modified Luttinger parameter        [--] =  1.168788e+00
+	Third  modified Luttinger parameter        [--] =  2.067013e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.295283e-01
+	Unstrained     light-hole band edge energy [eV] =  1.214726e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.214726e-01
+	Unstrained     conduction band edge energy [eV] =  5.852721e-01
+
+
+Shape 66: Embedded in shape 0
+
+	Material = Ga(0.1725)In(0.8275)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.9300)
+	Base half-length along x [nm] = 10.4625
+	Base half-length along y [nm] = 10.4625
+	Top  half-length along x [nm] = 10.3850
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.985438e-01
+
+	Band gap                                   [eV] =  4.599513e-01
+	Spin-orbit-splitting energy                [eV] =  3.516884e-01
+	Modified inverse electron effective mass   [--] = -4.153606e-01
+	Kane parameter                             [eV] =  2.251082e+01
+	First  modified Luttinger parameter        [--] =  5.261924e+00
+	Second modified Luttinger parameter        [--] =  1.179575e+00
+	Third  modified Luttinger parameter        [--] =  2.077850e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.285766e-01
+	Unstrained     light-hole band edge energy [eV] =  1.231119e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.231119e-01
+	Unstrained     conduction band edge energy [eV] =  5.830632e-01
+
+
+Shape 67: Embedded in shape 0
+
+	Material = Ga(0.1675)In(0.8325)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 0.9920)
+	Base half-length along x [nm] = 10.3850
+	Base half-length along y [nm] = 10.3850
+	Top  half-length along x [nm] = 10.3075
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.987462e-01
+
+	Band gap                                   [eV] =  4.561270e-01
+	Spin-orbit-splitting energy                [eV] =  3.523834e-01
+	Modified inverse electron effective mass   [--] = -4.124023e-01
+	Kane parameter                             [eV] =  2.249154e+01
+	First  modified Luttinger parameter        [--] =  5.282548e+00
+	Second modified Luttinger parameter        [--] =  1.190362e+00
+	Third  modified Luttinger parameter        [--] =  2.088687e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.276214e-01
+	Unstrained     light-hole band edge energy [eV] =  1.247620e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.247620e-01
+	Unstrained     conduction band edge energy [eV] =  5.808890e-01
+
+
+Shape 68: Embedded in shape 0
+
+	Material = Ga(0.1625)In(0.8375)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.0540)
+	Base half-length along x [nm] = 10.3075
+	Base half-length along y [nm] = 10.3075
+	Top  half-length along x [nm] = 10.2300
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.989488e-01
+
+	Band gap                                   [eV] =  4.523265e-01
+	Spin-orbit-splitting energy                [eV] =  3.530859e-01
+	Modified inverse electron effective mass   [--] = -4.094439e-01
+	Kane parameter                             [eV] =  2.247227e+01
+	First  modified Luttinger parameter        [--] =  5.303172e+00
+	Second modified Luttinger parameter        [--] =  1.201149e+00
+	Third  modified Luttinger parameter        [--] =  2.099524e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.266629e-01
+	Unstrained     light-hole band edge energy [eV] =  1.264231e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.264231e-01
+	Unstrained     conduction band edge energy [eV] =  5.787496e-01
+
+
+Shape 69: Embedded in shape 0
+
+	Material = Ga(0.1575)In(0.8425)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.1160)
+	Base half-length along x [nm] = 10.2300
+	Base half-length along y [nm] = 10.2300
+	Top  half-length along x [nm] = 10.1525
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.991513e-01
+
+	Band gap                                   [eV] =  4.485499e-01
+	Spin-orbit-splitting energy                [eV] =  3.537959e-01
+	Modified inverse electron effective mass   [--] = -4.064855e-01
+	Kane parameter                             [eV] =  2.245301e+01
+	First  modified Luttinger parameter        [--] =  5.323796e+00
+	Second modified Luttinger parameter        [--] =  1.211935e+00
+	Third  modified Luttinger parameter        [--] =  2.110360e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.257009e-01
+	Unstrained     light-hole band edge energy [eV] =  1.280950e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.280950e-01
+	Unstrained     conduction band edge energy [eV] =  5.766449e-01
+
+
+Shape 70: Embedded in shape 0
+
+	Material = Ga(0.1525)In(0.8475)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.1780)
+	Base half-length along x [nm] = 10.1525
+	Base half-length along y [nm] = 10.1525
+	Top  half-length along x [nm] = 10.0750
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.993538e-01
+
+	Band gap                                   [eV] =  4.447971e-01
+	Spin-orbit-splitting energy                [eV] =  3.545134e-01
+	Modified inverse electron effective mass   [--] = -4.035272e-01
+	Kane parameter                             [eV] =  2.243373e+01
+	First  modified Luttinger parameter        [--] =  5.344420e+00
+	Second modified Luttinger parameter        [--] =  1.222722e+00
+	Third  modified Luttinger parameter        [--] =  2.121197e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.247356e-01
+	Unstrained     light-hole band edge energy [eV] =  1.297778e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.297778e-01
+	Unstrained     conduction band edge energy [eV] =  5.745749e-01
+
+
+Shape 71: Embedded in shape 0
+
+	Material = Ga(0.1475)In(0.8525)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.2400)
+	Base half-length along x [nm] = 10.0750
+	Base half-length along y [nm] = 10.0750
+	Top  half-length along x [nm] = 9.9975
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.995563e-01
+
+	Band gap                                   [eV] =  4.410681e-01
+	Spin-orbit-splitting energy                [eV] =  3.552384e-01
+	Modified inverse electron effective mass   [--] = -4.005688e-01
+	Kane parameter                             [eV] =  2.241446e+01
+	First  modified Luttinger parameter        [--] =  5.365044e+00
+	Second modified Luttinger parameter        [--] =  1.233509e+00
+	Third  modified Luttinger parameter        [--] =  2.132034e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.237669e-01
+	Unstrained     light-hole band edge energy [eV] =  1.314715e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.314715e-01
+	Unstrained     conduction band edge energy [eV] =  5.725397e-01
+
+
+Shape 72: Embedded in shape 0
+
+	Material = Ga(0.1425)In(0.8575)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.3020)
+	Base half-length along x [nm] = 9.9975
+	Base half-length along y [nm] = 9.9975
+	Top  half-length along x [nm] = 9.9200
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.997588e-01
+
+	Band gap                                   [eV] =  4.373630e-01
+	Spin-orbit-splitting energy                [eV] =  3.559709e-01
+	Modified inverse electron effective mass   [--] = -3.976104e-01
+	Kane parameter                             [eV] =  2.239520e+01
+	First  modified Luttinger parameter        [--] =  5.385668e+00
+	Second modified Luttinger parameter        [--] =  1.244296e+00
+	Third  modified Luttinger parameter        [--] =  2.142871e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.227948e-01
+	Unstrained     light-hole band edge energy [eV] =  1.331761e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.331761e-01
+	Unstrained     conduction band edge energy [eV] =  5.705392e-01
+
+
+Shape 73: Embedded in shape 0
+
+	Material = Ga(0.1375)In(0.8625)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.3640)
+	Base half-length along x [nm] = 9.9200
+	Base half-length along y [nm] = 9.9200
+	Top  half-length along x [nm] = 9.8425
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  5.999613e-01
+
+	Band gap                                   [eV] =  4.336818e-01
+	Spin-orbit-splitting energy                [eV] =  3.567109e-01
+	Modified inverse electron effective mass   [--] = -3.946521e-01
+	Kane parameter                             [eV] =  2.237592e+01
+	First  modified Luttinger parameter        [--] =  5.406292e+00
+	Second modified Luttinger parameter        [--] =  1.255083e+00
+	Third  modified Luttinger parameter        [--] =  2.153708e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.218193e-01
+	Unstrained     light-hole band edge energy [eV] =  1.348916e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.348916e-01
+	Unstrained     conduction band edge energy [eV] =  5.685734e-01
+
+
+Shape 74: Embedded in shape 0
+
+	Material = Ga(0.1325)In(0.8675)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.4260)
+	Base half-length along x [nm] = 9.8425
+	Base half-length along y [nm] = 9.8425
+	Top  half-length along x [nm] = 9.7650
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.001638e-01
+
+	Band gap                                   [eV] =  4.300244e-01
+	Spin-orbit-splitting energy                [eV] =  3.574584e-01
+	Modified inverse electron effective mass   [--] = -3.916937e-01
+	Kane parameter                             [eV] =  2.235665e+01
+	First  modified Luttinger parameter        [--] =  5.426915e+00
+	Second modified Luttinger parameter        [--] =  1.265870e+00
+	Third  modified Luttinger parameter        [--] =  2.164545e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.208405e-01
+	Unstrained     light-hole band edge energy [eV] =  1.366180e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.366180e-01
+	Unstrained     conduction band edge energy [eV] =  5.666424e-01
+
+
+Shape 75: Embedded in shape 0
+
+	Material = Ga(0.1275)In(0.8725)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.4880)
+	Base half-length along x [nm] = 9.7650
+	Base half-length along y [nm] = 9.7650
+	Top  half-length along x [nm] = 9.6875
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.003662e-01
+
+	Band gap                                   [eV] =  4.263909e-01
+	Spin-orbit-splitting energy                [eV] =  3.582134e-01
+	Modified inverse electron effective mass   [--] = -3.887354e-01
+	Kane parameter                             [eV] =  2.233739e+01
+	First  modified Luttinger parameter        [--] =  5.447539e+00
+	Second modified Luttinger parameter        [--] =  1.276657e+00
+	Third  modified Luttinger parameter        [--] =  2.175382e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.198582e-01
+	Unstrained     light-hole band edge energy [eV] =  1.383552e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.383552e-01
+	Unstrained     conduction band edge energy [eV] =  5.647461e-01
+
+
+Shape 76: Embedded in shape 0
+
+	Material = Ga(0.1225)In(0.8775)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.5500)
+	Base half-length along x [nm] = 9.6875
+	Base half-length along y [nm] = 9.6875
+	Top  half-length along x [nm] = 9.6100
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.005687e-01
+
+	Band gap                                   [eV] =  4.227812e-01
+	Spin-orbit-splitting energy                [eV] =  3.589759e-01
+	Modified inverse electron effective mass   [--] = -3.857770e-01
+	Kane parameter                             [eV] =  2.231811e+01
+	First  modified Luttinger parameter        [--] =  5.468163e+00
+	Second modified Luttinger parameter        [--] =  1.287444e+00
+	Third  modified Luttinger parameter        [--] =  2.186219e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.188726e-01
+	Unstrained     light-hole band edge energy [eV] =  1.401034e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.401034e-01
+	Unstrained     conduction band edge energy [eV] =  5.628845e-01
+
+
+Shape 77: Embedded in shape 0
+
+	Material = Ga(0.1175)In(0.8825)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.6120)
+	Base half-length along x [nm] = 9.6100
+	Base half-length along y [nm] = 9.6100
+	Top  half-length along x [nm] = 9.5325
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.007713e-01
+
+	Band gap                                   [eV] =  4.191953e-01
+	Spin-orbit-splitting energy                [eV] =  3.597459e-01
+	Modified inverse electron effective mass   [--] = -3.828186e-01
+	Kane parameter                             [eV] =  2.229885e+01
+	First  modified Luttinger parameter        [--] =  5.488787e+00
+	Second modified Luttinger parameter        [--] =  1.298231e+00
+	Third  modified Luttinger parameter        [--] =  2.197056e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.178836e-01
+	Unstrained     light-hole band edge energy [eV] =  1.418624e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.418624e-01
+	Unstrained     conduction band edge energy [eV] =  5.610577e-01
+
+
+Shape 78: Embedded in shape 0
+
+	Material = Ga(0.1125)In(0.8875)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.6740)
+	Base half-length along x [nm] = 9.5325
+	Base half-length along y [nm] = 9.5325
+	Top  half-length along x [nm] = 9.4550
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.009738e-01
+
+	Band gap                                   [eV] =  4.156334e-01
+	Spin-orbit-splitting energy                [eV] =  3.605234e-01
+	Modified inverse electron effective mass   [--] = -3.798603e-01
+	Kane parameter                             [eV] =  2.227958e+01
+	First  modified Luttinger parameter        [--] =  5.509411e+00
+	Second modified Luttinger parameter        [--] =  1.309018e+00
+	Third  modified Luttinger parameter        [--] =  2.207893e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.168911e-01
+	Unstrained     light-hole band edge energy [eV] =  1.436323e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.436323e-01
+	Unstrained     conduction band edge energy [eV] =  5.592656e-01
+
+
+Shape 79: Embedded in shape 0
+
+	Material = Ga(0.1075)In(0.8925)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.7360)
+	Base half-length along x [nm] = 9.4550
+	Base half-length along y [nm] = 9.4550
+	Top  half-length along x [nm] = 9.3775
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.011762e-01
+
+	Band gap                                   [eV] =  4.120952e-01
+	Spin-orbit-splitting energy                [eV] =  3.613084e-01
+	Modified inverse electron effective mass   [--] = -3.769019e-01
+	Kane parameter                             [eV] =  2.226030e+01
+	First  modified Luttinger parameter        [--] =  5.530035e+00
+	Second modified Luttinger parameter        [--] =  1.319805e+00
+	Third  modified Luttinger parameter        [--] =  2.218730e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.158953e-01
+	Unstrained     light-hole band edge energy [eV] =  1.454131e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.454131e-01
+	Unstrained     conduction band edge energy [eV] =  5.575083e-01
+
+
+Shape 80: Embedded in shape 0
+
+	Material = Ga(0.1025)In(0.8975)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.7980)
+	Base half-length along x [nm] = 9.3775
+	Base half-length along y [nm] = 9.3775
+	Top  half-length along x [nm] = 9.3000
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.013788e-01
+
+	Band gap                                   [eV] =  4.085809e-01
+	Spin-orbit-splitting energy                [eV] =  3.621009e-01
+	Modified inverse electron effective mass   [--] = -3.739435e-01
+	Kane parameter                             [eV] =  2.224104e+01
+	First  modified Luttinger parameter        [--] =  5.550659e+00
+	Second modified Luttinger parameter        [--] =  1.330592e+00
+	Third  modified Luttinger parameter        [--] =  2.229567e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.148962e-01
+	Unstrained     light-hole band edge energy [eV] =  1.472048e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.472048e-01
+	Unstrained     conduction band edge energy [eV] =  5.557857e-01
+
+
+Shape 81: Embedded in shape 0
+
+	Material = Ga(0.0975)In(0.9025)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.8600)
+	Base half-length along x [nm] = 9.3000
+	Base half-length along y [nm] = 9.3000
+	Top  half-length along x [nm] = 9.2225
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.015813e-01
+
+	Band gap                                   [eV] =  4.050905e-01
+	Spin-orbit-splitting energy                [eV] =  3.629009e-01
+	Modified inverse electron effective mass   [--] = -3.709852e-01
+	Kane parameter                             [eV] =  2.222177e+01
+	First  modified Luttinger parameter        [--] =  5.571283e+00
+	Second modified Luttinger parameter        [--] =  1.341379e+00
+	Third  modified Luttinger parameter        [--] =  2.240404e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.138936e-01
+	Unstrained     light-hole band edge energy [eV] =  1.490073e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.490073e-01
+	Unstrained     conduction band edge energy [eV] =  5.540978e-01
+
+
+Shape 82: Embedded in shape 0
+
+	Material = Ga(0.0925)In(0.9075)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.9220)
+	Base half-length along x [nm] = 9.2225
+	Base half-length along y [nm] = 9.2225
+	Top  half-length along x [nm] = 9.1450
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.017838e-01
+
+	Band gap                                   [eV] =  4.016239e-01
+	Spin-orbit-splitting energy                [eV] =  3.637084e-01
+	Modified inverse electron effective mass   [--] = -3.680268e-01
+	Kane parameter                             [eV] =  2.220249e+01
+	First  modified Luttinger parameter        [--] =  5.591906e+00
+	Second modified Luttinger parameter        [--] =  1.352166e+00
+	Third  modified Luttinger parameter        [--] =  2.251241e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.128876e-01
+	Unstrained     light-hole band edge energy [eV] =  1.508208e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.508208e-01
+	Unstrained     conduction band edge energy [eV] =  5.524447e-01
+
+
+Shape 83: Embedded in shape 0
+
+	Material = Ga(0.0875)In(0.9125)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 1.9840)
+	Base half-length along x [nm] = 9.1450
+	Base half-length along y [nm] = 9.1450
+	Top  half-length along x [nm] = 9.0675
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.019862e-01
+
+	Band gap                                   [eV] =  3.981811e-01
+	Spin-orbit-splitting energy                [eV] =  3.645234e-01
+	Modified inverse electron effective mass   [--] = -3.650685e-01
+	Kane parameter                             [eV] =  2.218323e+01
+	First  modified Luttinger parameter        [--] =  5.612530e+00
+	Second modified Luttinger parameter        [--] =  1.362953e+00
+	Third  modified Luttinger parameter        [--] =  2.262078e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.118783e-01
+	Unstrained     light-hole band edge energy [eV] =  1.526451e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.526451e-01
+	Unstrained     conduction band edge energy [eV] =  5.508263e-01
+
+
+Shape 84: Embedded in shape 0
+
+	Material = Ga(0.0825)In(0.9175)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.0460)
+	Base half-length along x [nm] = 9.0675
+	Base half-length along y [nm] = 9.0675
+	Top  half-length along x [nm] = 8.9900
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.021888e-01
+
+	Band gap                                   [eV] =  3.947623e-01
+	Spin-orbit-splitting energy                [eV] =  3.653459e-01
+	Modified inverse electron effective mass   [--] = -3.621101e-01
+	Kane parameter                             [eV] =  2.216396e+01
+	First  modified Luttinger parameter        [--] =  5.633154e+00
+	Second modified Luttinger parameter        [--] =  1.373740e+00
+	Third  modified Luttinger parameter        [--] =  2.272915e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.108656e-01
+	Unstrained     light-hole band edge energy [eV] =  1.544804e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.544804e-01
+	Unstrained     conduction band edge energy [eV] =  5.492426e-01
+
+
+Shape 85: Embedded in shape 0
+
+	Material = Ga(0.0775)In(0.9225)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.1080)
+	Base half-length along x [nm] = 8.9900
+	Base half-length along y [nm] = 8.9900
+	Top  half-length along x [nm] = 8.9125
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.023913e-01
+
+	Band gap                                   [eV] =  3.913672e-01
+	Spin-orbit-splitting energy                [eV] =  3.661759e-01
+	Modified inverse electron effective mass   [--] = -3.591517e-01
+	Kane parameter                             [eV] =  2.214468e+01
+	First  modified Luttinger parameter        [--] =  5.653778e+00
+	Second modified Luttinger parameter        [--] =  1.384527e+00
+	Third  modified Luttinger parameter        [--] =  2.283752e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.098495e-01
+	Unstrained     light-hole band edge energy [eV] =  1.563265e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.563265e-01
+	Unstrained     conduction band edge energy [eV] =  5.476937e-01
+
+
+Shape 86: Embedded in shape 0
+
+	Material = Ga(0.0725)In(0.9275)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.1700)
+	Base half-length along x [nm] = 8.9125
+	Base half-length along y [nm] = 8.9125
+	Top  half-length along x [nm] = 8.8350
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.025938e-01
+
+	Band gap                                   [eV] =  3.879960e-01
+	Spin-orbit-splitting energy                [eV] =  3.670134e-01
+	Modified inverse electron effective mass   [--] = -3.561934e-01
+	Kane parameter                             [eV] =  2.212542e+01
+	First  modified Luttinger parameter        [--] =  5.674402e+00
+	Second modified Luttinger parameter        [--] =  1.395313e+00
+	Third  modified Luttinger parameter        [--] =  2.294588e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.088300e-01
+	Unstrained     light-hole band edge energy [eV] =  1.581835e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.581835e-01
+	Unstrained     conduction band edge energy [eV] =  5.461795e-01
+
+
+Shape 87: Embedded in shape 0
+
+	Material = Ga(0.0675)In(0.9325)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.2320)
+	Base half-length along x [nm] = 8.8350
+	Base half-length along y [nm] = 8.8350
+	Top  half-length along x [nm] = 8.7575
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.027963e-01
+
+	Band gap                                   [eV] =  3.846487e-01
+	Spin-orbit-splitting energy                [eV] =  3.678584e-01
+	Modified inverse electron effective mass   [--] = -3.532350e-01
+	Kane parameter                             [eV] =  2.210615e+01
+	First  modified Luttinger parameter        [--] =  5.695026e+00
+	Second modified Luttinger parameter        [--] =  1.406100e+00
+	Third  modified Luttinger parameter        [--] =  2.305425e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.078071e-01
+	Unstrained     light-hole band edge energy [eV] =  1.600514e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.600514e-01
+	Unstrained     conduction band edge energy [eV] =  5.447000e-01
+
+
+Shape 88: Embedded in shape 0
+
+	Material = Ga(0.0625)In(0.9375)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.2940)
+	Base half-length along x [nm] = 8.7575
+	Base half-length along y [nm] = 8.7575
+	Top  half-length along x [nm] = 8.6800
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.029988e-01
+
+	Band gap                                   [eV] =  3.813252e-01
+	Spin-orbit-splitting energy                [eV] =  3.687109e-01
+	Modified inverse electron effective mass   [--] = -3.502766e-01
+	Kane parameter                             [eV] =  2.208687e+01
+	First  modified Luttinger parameter        [--] =  5.715650e+00
+	Second modified Luttinger parameter        [--] =  1.416887e+00
+	Third  modified Luttinger parameter        [--] =  2.316262e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.067808e-01
+	Unstrained     light-hole band edge energy [eV] =  1.619301e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.619301e-01
+	Unstrained     conduction band edge energy [eV] =  5.432553e-01
+
+
+Shape 89: Embedded in shape 0
+
+	Material = Ga(0.0575)In(0.9425)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.3560)
+	Base half-length along x [nm] = 8.6800
+	Base half-length along y [nm] = 8.6800
+	Top  half-length along x [nm] = 8.6025
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.032013e-01
+
+	Band gap                                   [eV] =  3.780255e-01
+	Spin-orbit-splitting energy                [eV] =  3.695709e-01
+	Modified inverse electron effective mass   [--] = -3.473183e-01
+	Kane parameter                             [eV] =  2.206761e+01
+	First  modified Luttinger parameter        [--] =  5.736274e+00
+	Second modified Luttinger parameter        [--] =  1.427674e+00
+	Third  modified Luttinger parameter        [--] =  2.327099e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.057511e-01
+	Unstrained     light-hole band edge energy [eV] =  1.638198e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.638198e-01
+	Unstrained     conduction band edge energy [eV] =  5.418453e-01
+
+
+Shape 90: Embedded in shape 0
+
+	Material = Ga(0.0525)In(0.9475)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.4180)
+	Base half-length along x [nm] = 8.6025
+	Base half-length along y [nm] = 8.6025
+	Top  half-length along x [nm] = 8.5250
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.034038e-01
+
+	Band gap                                   [eV] =  3.747498e-01
+	Spin-orbit-splitting energy                [eV] =  3.704384e-01
+	Modified inverse electron effective mass   [--] = -3.443599e-01
+	Kane parameter                             [eV] =  2.204834e+01
+	First  modified Luttinger parameter        [--] =  5.756898e+00
+	Second modified Luttinger parameter        [--] =  1.438461e+00
+	Third  modified Luttinger parameter        [--] =  2.337936e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.047181e-01
+	Unstrained     light-hole band edge energy [eV] =  1.657203e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.657203e-01
+	Unstrained     conduction band edge energy [eV] =  5.404701e-01
+
+
+Shape 91: Embedded in shape 0
+
+	Material = Ga(0.0475)In(0.9525)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.4800)
+	Base half-length along x [nm] = 8.5250
+	Base half-length along y [nm] = 8.5250
+	Top  half-length along x [nm] = 8.4475
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.036063e-01
+
+	Band gap                                   [eV] =  3.714978e-01
+	Spin-orbit-splitting energy                [eV] =  3.713134e-01
+	Modified inverse electron effective mass   [--] = -3.414016e-01
+	Kane parameter                             [eV] =  2.202906e+01
+	First  modified Luttinger parameter        [--] =  5.777521e+00
+	Second modified Luttinger parameter        [--] =  1.449248e+00
+	Third  modified Luttinger parameter        [--] =  2.348773e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.036817e-01
+	Unstrained     light-hole band edge energy [eV] =  1.676318e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.676318e-01
+	Unstrained     conduction band edge energy [eV] =  5.391296e-01
+
+
+Shape 92: Embedded in shape 0
+
+	Material = Ga(0.0425)In(0.9575)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.5420)
+	Base half-length along x [nm] = 8.4475
+	Base half-length along y [nm] = 8.4475
+	Top  half-length along x [nm] = 8.3700
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.038088e-01
+
+	Band gap                                   [eV] =  3.682697e-01
+	Spin-orbit-splitting energy                [eV] =  3.721959e-01
+	Modified inverse electron effective mass   [--] = -3.384432e-01
+	Kane parameter                             [eV] =  2.200980e+01
+	First  modified Luttinger parameter        [--] =  5.798145e+00
+	Second modified Luttinger parameter        [--] =  1.460035e+00
+	Third  modified Luttinger parameter        [--] =  2.359610e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.026418e-01
+	Unstrained     light-hole band edge energy [eV] =  1.695541e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.695541e-01
+	Unstrained     conduction band edge energy [eV] =  5.378238e-01
+
+
+Shape 93: Embedded in shape 0
+
+	Material = Ga(0.0375)In(0.9625)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.6040)
+	Base half-length along x [nm] = 8.3700
+	Base half-length along y [nm] = 8.3700
+	Top  half-length along x [nm] = 8.2925
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.040113e-01
+
+	Band gap                                   [eV] =  3.650655e-01
+	Spin-orbit-splitting energy                [eV] =  3.730859e-01
+	Modified inverse electron effective mass   [--] = -3.354848e-01
+	Kane parameter                             [eV] =  2.199053e+01
+	First  modified Luttinger parameter        [--] =  5.818769e+00
+	Second modified Luttinger parameter        [--] =  1.470822e+00
+	Third  modified Luttinger parameter        [--] =  2.370447e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.015986e-01
+	Unstrained     light-hole band edge energy [eV] =  1.714873e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.714873e-01
+	Unstrained     conduction band edge energy [eV] =  5.365528e-01
+
+
+Shape 94: Embedded in shape 0
+
+	Material = Ga(0.0325)In(0.9675)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.6660)
+	Base half-length along x [nm] = 8.2925
+	Base half-length along y [nm] = 8.2925
+	Top  half-length along x [nm] = 8.2150
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.042137e-01
+
+	Band gap                                   [eV] =  3.618851e-01
+	Spin-orbit-splitting energy                [eV] =  3.739834e-01
+	Modified inverse electron effective mass   [--] = -3.325265e-01
+	Kane parameter                             [eV] =  2.197125e+01
+	First  modified Luttinger parameter        [--] =  5.839393e+00
+	Second modified Luttinger parameter        [--] =  1.481609e+00
+	Third  modified Luttinger parameter        [--] =  2.381284e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -2.005520e-01
+	Unstrained     light-hole band edge energy [eV] =  1.734314e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.734314e-01
+	Unstrained     conduction band edge energy [eV] =  5.353165e-01
+
+
+Shape 95: Embedded in shape 0
+
+	Material = Ga(0.0275)In(0.9725)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.7280)
+	Base half-length along x [nm] = 8.2150
+	Base half-length along y [nm] = 8.2150
+	Top  half-length along x [nm] = 8.1375
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.044162e-01
+
+	Band gap                                   [eV] =  3.587286e-01
+	Spin-orbit-splitting energy                [eV] =  3.748884e-01
+	Modified inverse electron effective mass   [--] = -3.295681e-01
+	Kane parameter                             [eV] =  2.195199e+01
+	First  modified Luttinger parameter        [--] =  5.860017e+00
+	Second modified Luttinger parameter        [--] =  1.492396e+00
+	Third  modified Luttinger parameter        [--] =  2.392121e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -1.995021e-01
+	Unstrained     light-hole band edge energy [eV] =  1.753864e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.753864e-01
+	Unstrained     conduction band edge energy [eV] =  5.341149e-01
+
+
+Shape 96: Embedded in shape 0
+
+	Material = Ga(0.0225)In(0.9775)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.7900)
+	Base half-length along x [nm] = 8.1375
+	Base half-length along y [nm] = 8.1375
+	Top  half-length along x [nm] = 8.0600
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.046188e-01
+
+	Band gap                                   [eV] =  3.555959e-01
+	Spin-orbit-splitting energy                [eV] =  3.758009e-01
+	Modified inverse electron effective mass   [--] = -3.266097e-01
+	Kane parameter                             [eV] =  2.193272e+01
+	First  modified Luttinger parameter        [--] =  5.880641e+00
+	Second modified Luttinger parameter        [--] =  1.503183e+00
+	Third  modified Luttinger parameter        [--] =  2.402958e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -1.984487e-01
+	Unstrained     light-hole band edge energy [eV] =  1.773522e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.773522e-01
+	Unstrained     conduction band edge energy [eV] =  5.329481e-01
+
+
+Shape 97: Embedded in shape 0
+
+	Material = Ga(0.0175)In(0.9825)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.8520)
+	Base half-length along x [nm] = 8.0600
+	Base half-length along y [nm] = 8.0600
+	Top  half-length along x [nm] = 7.9825
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.048213e-01
+
+	Band gap                                   [eV] =  3.524870e-01
+	Spin-orbit-splitting energy                [eV] =  3.767209e-01
+	Modified inverse electron effective mass   [--] = -3.236514e-01
+	Kane parameter                             [eV] =  2.191344e+01
+	First  modified Luttinger parameter        [--] =  5.901265e+00
+	Second modified Luttinger parameter        [--] =  1.513970e+00
+	Third  modified Luttinger parameter        [--] =  2.413795e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -1.973920e-01
+	Unstrained     light-hole band edge energy [eV] =  1.793290e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.793290e-01
+	Unstrained     conduction band edge energy [eV] =  5.318160e-01
+
+
+Shape 98: Embedded in shape 0
+
+	Material = Ga(0.0125)In(0.9875)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.9140)
+	Base half-length along x [nm] = 7.9825
+	Base half-length along y [nm] = 7.9825
+	Top  half-length along x [nm] = 7.9050
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.050237e-01
+
+	Band gap                                   [eV] =  3.494020e-01
+	Spin-orbit-splitting energy                [eV] =  3.776484e-01
+	Modified inverse electron effective mass   [--] = -3.206930e-01
+	Kane parameter                             [eV] =  2.189418e+01
+	First  modified Luttinger parameter        [--] =  5.921889e+00
+	Second modified Luttinger parameter        [--] =  1.524757e+00
+	Third  modified Luttinger parameter        [--] =  2.424632e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -1.963318e-01
+	Unstrained     light-hole band edge energy [eV] =  1.813166e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.813166e-01
+	Unstrained     conduction band edge energy [eV] =  5.307186e-01
+
+
+Shape 99: Embedded in shape 0
+
+	Material = Ga(0.0075)In(0.9925)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 2.9760)
+	Base half-length along x [nm] = 7.9050
+	Base half-length along y [nm] = 7.9050
+	Top  half-length along x [nm] = 7.8275
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.052263e-01
+
+	Band gap                                   [eV] =  3.463409e-01
+	Spin-orbit-splitting energy                [eV] =  3.785834e-01
+	Modified inverse electron effective mass   [--] = -3.177347e-01
+	Kane parameter                             [eV] =  2.187491e+01
+	First  modified Luttinger parameter        [--] =  5.942512e+00
+	Second modified Luttinger parameter        [--] =  1.535544e+00
+	Third  modified Luttinger parameter        [--] =  2.435469e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -1.952683e-01
+	Unstrained     light-hole band edge energy [eV] =  1.833151e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.833151e-01
+	Unstrained     conduction band edge energy [eV] =  5.296560e-01
+
+
+Shape 100: Embedded in shape 0
+
+	Material = Ga(0.0025)In(0.9975)P(0.0000)As(1.0000) 
+
+	Shape = Rectangular-base truncated pyramid
+
+	Centre (x, y, z)    [nm] = (0.0000, 0.0000, 3.0380)
+	Base half-length along x [nm] = 7.8275
+	Base half-length along y [nm] = 7.8275
+	Top  half-length along x [nm] = 7.7500
+	Height           along z [nm] = 0.0620
+	Shape alpha rotation angle (degrees) = 0.0000
+	Shape beta rotation angle (degrees)  = 0.0000
+	Shape gamma rotation angle (degrees) = 0.0000
+
+	Lattice constant, a [nm] =  6.054288e-01
+
+	Band gap                                   [eV] =  3.433036e-01
+	Spin-orbit-splitting energy                [eV] =  3.795259e-01
+	Modified inverse electron effective mass   [--] = -3.147763e-01
+	Kane parameter                             [eV] =  2.185563e+01
+	First  modified Luttinger parameter        [--] =  5.963136e+00
+	Second modified Luttinger parameter        [--] =  1.546331e+00
+	Third  modified Luttinger parameter        [--] =  2.446306e+00
+
+	Unstrained spin-split-off band edge energy [eV] = -1.942014e-01
+	Unstrained     light-hole band edge energy [eV] =  1.853245e-01
+	Unstrained     heavy-hole band edge energy [eV] =  1.853245e-01
+	Unstrained     conduction band edge energy [eV] =  5.286281e-01
+
+

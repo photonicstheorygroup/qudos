@@ -1,0 +1,29 @@
+Electronic structure supercell size:
+
+	(Lx, Ly, Lz) = (2.0000e+01, 2.0000e+01, 2.0000e+01) [nm]
+	Volume       =  8.0000e+03 [nm^3]           
+
+
+Strain supercell size:
+
+	(LSx, LSy, LSz) = (2.0000e+01, 2.0000e+01, 2.0000e+01) [nm]
+	Volume       =  8.0000e+03 [nm^3]           
+
+
+Plane wave vectors:
+
+	(M_Gx, M_Gy, M_Gz) = (5, 5, 5)
+	(N_Gx, N_Gy, N_Gz) = (11, 11, 11) = (2*M_Gx + 1, 2*M_Gy + 1, 2*M_Gz + 1)
+
+	max(|Gx|, |Gy|, |Gz|) = (1.5708e+00, 1.5708e+00, 1.5708e+00) [nm^-1]
+
+	Cut-off energy = 2.8202e-01 [eV]
+Strain supercell plane wave vectors:
+
+	(M_S_Gx, M_S_Gy, M_S_Gz) = (5, 5, 5)
+	(N_S_Gx, N_S_Gy, N_S_Gz) = (11, 11, 11) = (2*M_S_Gx + 1, 2*M_S_Gy + 1, 2*M_S_Gz + 1)
+
+	max(|GSx|, |GSy|, |GSz|) = (1.5708e+00, 1.5708e+00, 1.5708e+00) [nm^-1]
+
+Supercell miniband dispersion wave vector = (  0.000000e+00,  0.000000e+00,  0.000000e+00 ) [nm^-1]
+

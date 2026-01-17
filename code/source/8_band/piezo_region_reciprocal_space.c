@@ -1,0 +1,787 @@
+// QUantum Dot Open-source Simulator (QUDOS)
+//
+// Copyright (c) 2025
+// Tommy Murphy and Christopher A. Broderick
+//
+// This file is part of QUDOS.
+//
+// QUDOS is free software: you can redistribute it and/or modify it under the terms of the
+// GNU General Public License as published by the Free Software Foundation, either
+// version 3 of the License, or (at your discretion) any later version.
+//
+// QUDOS is distributed in the hope that it will be useful, but without any warranty and
+// without an implied warranty of merchantability or fitness for a particular purpose.
+// See the GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along with QUDOS.
+// If not, see <https://www.gnu.org/licenses/>.
+//
+// Alternative commercial licensing terms may be available from the copyright holders upon request.
+
+#include "8_band.h"
+
+void piezo_region_reciprocal_space( int N_shape, struct wave_vectors basis, struct supercell_geometry *supercell, struct material_params *parameters )
+{
+
+	// Process limit for Dfti FFT library
+	MKL_INT process_limit = ( 2*basis.N_Gx_T - 1 <= 2*basis.N_Gy_T - 1 ? 2*basis.N_Gx_T - 1 : 2*basis.N_Gy_T - 1 );
+
+	// Sub-communicator splits communicator into 2 for process IDs under limit and above limit
+	MPI_Comm MPI_SUB_COMM;
+	if ( nprocs > process_limit )
+	{
+
+		MPI_Comm_split( MPI_COMM_WORLD, ( myid < process_limit ? 0 : 1 ), myid, &MPI_SUB_COMM );
+
+	}
+	else
+	{
+
+		MPI_Comm_dup( MPI_COMM_WORLD, &MPI_SUB_COMM );
+
+	}
+
+	// Variables relating to the extraction of the computationally relevant central portion of the calculated convolution
+	MKL_INT local_start_reduced;
+	MKL_INT local_rows_reduced;
+	MKL_INT local_size_reduced;
+
+	// Local shape characteristic function
+	struct characteristic_functions characteristic_function_strain_region_G_local;
+	// Global arrays for convolutions between characteristic functions and strain tensor components
+	struct convolution_char_strain convolutions_char_strain_region;
+	// Local arrays for convolutions between characteristic functions and strain tensor components
+	struct convolution_char_strain convolutions_char_strain_region_local;
+	// Local arrays for central portion of convolutions between characteristic functions and strain tensor components
+	struct convolution_char_strain convolutions_char_strain_region_reduced_local;
+	// Local part of piezoelectric potential
+	struct piezo_potential phi_piezo_region_G_local;
+
+	// The following store information about the local reduced convolution array in order to later gather it on a single process
+	int *recvcounts = ( int * ) malloc( nprocs*sizeof( int ) );
+	int *displs = ( int * ) malloc( nprocs*sizeof( int ) );
+
+	for ( int proc = 0; proc < nprocs; proc++ )
+	{
+
+		recvcounts[proc] = 1;
+
+		displs[proc] = ( proc == 0 ? 0 : displs[proc - 1] + recvcounts[proc - 1] );
+	
+	}
+
+	int *recvcounts_convolutions = ( int * ) malloc( nprocs*sizeof( int ) );
+	int *displs_convolutions = ( int * ) malloc( nprocs*sizeof( int ) );	
+
+
+
+
+	if ( myid < process_limit ) // Processes with IDs less than the process limit
+	{
+
+		// Total number of elements in each dimension for 0 padded arrays involved in Dfti FFT calculations as part of convolution calculation
+		MKL_LONG sizes[] = { 2*basis.N_Gx_T - 1, 2*basis.N_Gy_T - 1, 2*basis.N_Gz_T - 1 };
+
+		// Global size of array
+		MKL_LONG global_size = sizes[0]*sizes[1]*sizes[2];
+
+		// Dfti precision & array type
+		MKL_LONG DFTI_PRECISION = DFTI_DOUBLE;
+		MKL_LONG DFTI_TYPE = DFTI_COMPLEX;
+
+		// Dfti task descriptor
+		DFTI_DESCRIPTOR_DM_HANDLE task;
+
+		// Initialise Dfti task descriptor
+		check_dfti( DftiCreateDescriptorDM( MPI_SUB_COMM, &task, DFTI_PRECISION, DFTI_TYPE, 3, sizes ), "DftiCreateDescriptorDM" );
+
+		// Set Dfti backward scale to represent inverse FFT
+		check_dfti( DftiSetValueDM( task, DFTI_BACKWARD_SCALE, 1.0 / global_size ), "DftiSetValueDM" );
+
+		// Local memory size for arrays involved in Dfti FFT calculations
+		MKL_LONG local_memory_size;
+		check_dfti( DftiGetValueDM( task, CDFT_LOCAL_SIZE, &local_memory_size ), "DftiGetValueDM" );
+		// Global position of first element of local arrays involved in Dfti FFT calculations
+		MKL_LONG local_start;
+		check_dfti( DftiGetValueDM( task, CDFT_LOCAL_X_START, &local_start ), "DftiGetValueDM" );
+		// Number of global rows in local arrays involved in Dfti FFT calculations
+		MKL_LONG local_rows;
+		check_dfti( DftiGetValueDM( task, CDFT_LOCAL_NX, &local_rows ), "DftiGetValueDM" );
+		// Number of elements in local arrays involved in Dfti FFT calculations
+		MKL_LONG local_size = local_rows*sizes[1]*sizes[2];
+
+		// Commit Dfti descriptor
+		check_dfti( DftiCommitDescriptorDM( task ), "DftiCommitDescriptorDM" );
+
+		// Will hold local parts of strain tensor
+		struct strain_tensor strain_region_G_local;
+		strain_region_G_local.xx = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		strain_region_G_local.yy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		strain_region_G_local.zz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		strain_region_G_local.yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		strain_region_G_local.xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		strain_region_G_local.xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+
+		// Extracting local parts of zero-padded strain tensor from global
+		#pragma omp parallel for collapse( 3 )
+		for ( int global_row = local_start; global_row < local_start + local_rows; global_row++ )
+		{
+
+			for ( int idx_y = 0; idx_y < sizes[1]; idx_y++ )
+			{
+
+				for ( int idx_z = 0; idx_z < sizes[2]; idx_z++ )
+				{
+
+					if ( global_row >= 0 && global_row < basis.N_Gx_T && idx_y >= 0 && idx_y <  basis.N_Gy_T && idx_z >= 0 && idx_z < basis.N_Gz_T )
+					{
+
+						strain_region_G_local.xx[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = strain_region_G.xx[ ( global_row )*( basis.N_Gy_T )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z )];
+						strain_region_G_local.yy[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = strain_region_G.yy[ ( global_row )*( basis.N_Gy_T )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z )];
+						strain_region_G_local.zz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = strain_region_G.zz[ ( global_row )*( basis.N_Gy_T )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z )];
+						strain_region_G_local.yz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = strain_region_G.yz[ ( global_row )*( basis.N_Gy_T )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z )];
+						strain_region_G_local.xz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = strain_region_G.xz[ ( global_row )*( basis.N_Gy_T )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z )];
+						strain_region_G_local.xy[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = strain_region_G.xy[ ( global_row )*( basis.N_Gy_T )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z )];
+
+					}
+
+				}
+
+			}
+
+		}
+
+		// Compute FFT using Dfti library of strain tensor components
+		check_dfti( DftiComputeForwardDM( task, strain_region_G_local.xx ), "DftiComputeForwardDM" );
+		check_dfti( DftiComputeForwardDM( task, strain_region_G_local.yy ), "DftiComputeForwardDM" );
+		check_dfti( DftiComputeForwardDM( task, strain_region_G_local.zz ), "DftiComputeForwardDM" );
+		check_dfti( DftiComputeForwardDM( task, strain_region_G_local.yz ), "DftiComputeForwardDM" );
+		check_dfti( DftiComputeForwardDM( task, strain_region_G_local.xz ), "DftiComputeForwardDM" );
+		check_dfti( DftiComputeForwardDM( task, strain_region_G_local.xy ), "DftiComputeForwardDM" );
+
+		// Setting local variables enabling extraction of central portion of convolved array, i.e. number of components of central portion that exist on each process and start point in local data
+		if ( local_start >= basis.N_Gx_T / 2 && local_start < basis.N_Gx_T + basis.N_Gx_T / 2 )
+		{
+
+			local_start_reduced = 0;
+			if ( local_start + local_rows < basis.N_Gx_T + basis.N_Gx_T / 2 )
+			{
+
+				local_rows_reduced = local_rows;
+
+			}
+			else
+			{
+
+				local_rows_reduced = basis.N_Gx_T + basis.N_Gx_T / 2 - local_start;
+
+			}
+
+		}
+		else if ( local_start < basis.N_Gx_T / 2)
+		{
+
+			if ( local_start + local_rows >= basis.N_Gx_T / 2 && local_start + local_rows < basis.N_Gx_T + basis.N_Gx_T / 2 )
+			{
+
+				local_start_reduced = basis.N_Gx_T / 2 - local_start;
+				local_rows_reduced = local_rows - local_start_reduced;
+
+			}
+			else if ( local_start + local_rows >= basis.N_Gx_T + basis.N_Gx_T / 2 )
+			{
+
+				local_start_reduced = basis.N_Gx_T / 2 - local_start;
+				local_rows_reduced = basis.N_Gx_T;
+
+			}
+			else
+			{
+
+				local_start_reduced = 0;
+				local_rows_reduced = 0;
+
+			}
+
+		}
+		else
+		{
+
+			local_start_reduced = 0;
+			local_rows_reduced = 0;
+
+		}
+		local_size_reduced = local_rows_reduced*basis.N_Gy_T*basis.N_Gz_T;
+
+		// Gathering information regarding local number of elements in reduced array on each process that must be sent to all processes
+		MPI_Allgatherv( &local_size_reduced, 1, MPI_INT, recvcounts_convolutions, recvcounts, displs, MPI_INT, MPI_COMM_WORLD );
+
+		// Calulating reduced array global displacements based on gathered data
+		for ( int proc = 0; proc < nprocs; proc++ )
+		{
+
+			displs_convolutions[proc] = ( proc == 0 ? 0 : displs_convolutions[proc - 1] + recvcounts_convolutions[proc - 1] );
+		
+		}
+
+
+		// Will hold local part of shape characteristic function
+		characteristic_function_strain_region_G_local.chi = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+
+		// Will hold local part of convolution between strain tensor components and shape characteristic function
+		convolutions_char_strain_region_local.char_xx = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		convolutions_char_strain_region_local.char_yy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		convolutions_char_strain_region_local.char_zz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		convolutions_char_strain_region_local.char_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		convolutions_char_strain_region_local.char_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+		convolutions_char_strain_region_local.char_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+
+		// Will hold local part of central portion of convolution between strain tensor components and shape characteristic function
+		convolutions_char_strain_region_reduced_local.char_xx = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+		convolutions_char_strain_region_reduced_local.char_yy = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+		convolutions_char_strain_region_reduced_local.char_zz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+		convolutions_char_strain_region_reduced_local.char_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+		convolutions_char_strain_region_reduced_local.char_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+		convolutions_char_strain_region_reduced_local.char_xy = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+
+		// Will hold local part of piezoelectric potential
+		phi_piezo_region_G_local.pz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+
+		// Calculating local part of 1st order piezoelectric potential contribution from matrix material 1st order coefficient
+		#pragma omp parallel for collapse( 3 )
+		for ( int idx_x = 0; idx_x < local_rows_reduced; idx_x++ )
+		{
+
+			for ( int idx_y = 0; idx_y < basis.N_Gy_T; idx_y++ )
+			{
+
+				for ( int idx_z = 0; idx_z < basis.N_Gz_T; idx_z++ )
+				{
+
+					phi_piezo_region_G_local.pz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] += piezo_fourier_coefficient( 1, 0, displs_convolutions[myid]/(basis.N_Gy_T*basis.N_Gz_T) + idx_x, idx_y, idx_z, idx_x, basis, supercell, parameters, strain_region_G, convolutions_char_strain_region_reduced_local );
+
+				}
+
+			}
+
+		}
+
+		// If the 2nd order piezoelectric potential is included, the following computes the necessary convolutions between different strain tensor components, and then between those and the shape characteristic functions
+		if ( include_piezo == 2 || include_piezo == 3 )
+		{
+
+			// Will hold local part of convolutions between strain tensor components
+			convolutions_char_strain_region_local.xx_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.yy_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.zz_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xy_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.yy_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xx_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.zz_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xy_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.zz_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xx_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.yy_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xz_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+
+			// Will hold local part of central portion of convolutions between strain tensor components
+			convolutions_char_strain_region_reduced_local.xx_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.yy_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.zz_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.xy_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.yy_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.xx_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.zz_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.xy_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.zz_xy = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.xx_xy = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.yy_xy = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.xz_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+
+			// Element-by-element multiplication of strain tensor components that were previously FFT
+			vzMul( local_size, strain_region_G_local.xx, strain_region_G_local.yz, convolutions_char_strain_region_local.xx_yz );
+			vzMul( local_size, strain_region_G_local.yy, strain_region_G_local.yz, convolutions_char_strain_region_local.yy_yz );
+			vzMul( local_size, strain_region_G_local.zz, strain_region_G_local.yz, convolutions_char_strain_region_local.zz_yz );
+			vzMul( local_size, strain_region_G_local.xy, strain_region_G_local.xz, convolutions_char_strain_region_local.xy_xz );
+			vzMul( local_size, strain_region_G_local.yy, strain_region_G_local.xz, convolutions_char_strain_region_local.yy_xz );
+			vzMul( local_size, strain_region_G_local.xx, strain_region_G_local.xz, convolutions_char_strain_region_local.xx_xz );
+			vzMul( local_size, strain_region_G_local.zz, strain_region_G_local.xz, convolutions_char_strain_region_local.zz_xz );
+			vzMul( local_size, strain_region_G_local.xy, strain_region_G_local.yz, convolutions_char_strain_region_local.xy_yz );
+			vzMul( local_size, strain_region_G_local.zz, strain_region_G_local.xy, convolutions_char_strain_region_local.zz_xy );
+			vzMul( local_size, strain_region_G_local.xx, strain_region_G_local.xy, convolutions_char_strain_region_local.xx_xy );
+			vzMul( local_size, strain_region_G_local.yy, strain_region_G_local.xy, convolutions_char_strain_region_local.yy_xy );
+			vzMul( local_size, strain_region_G_local.xz, strain_region_G_local.yz, convolutions_char_strain_region_local.xz_yz );
+
+			// Inverse FFT to complete convolution calculation
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.xx_yz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.yy_yz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.zz_yz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.xy_xz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.yy_xz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.xx_xz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.zz_xz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.xy_yz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.zz_xy ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.xx_xy ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.yy_xy ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.xz_yz ), "DftiComputeBackwardDM" );
+
+
+			// Extracting central portion of local convolution arrays & computing local part of 2nd order piezoelectric potential contribution from matrix material 2nd order coefficients
+			#pragma omp parallel for collapse( 3 )
+			for ( int idx_x = 0; idx_x < local_rows_reduced; idx_x++ )
+			{
+
+				for ( int idx_y = 0; idx_y < basis.N_Gy_T; idx_y++ )
+				{
+
+					for ( int idx_z = 0; idx_z < basis.N_Gz_T; idx_z++ )
+					{
+
+						convolutions_char_strain_region_reduced_local.xx_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.xx_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.yy_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.yy_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.zz_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.zz_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.xy_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.xy_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.yy_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.yy_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.xx_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.xx_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.zz_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.zz_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.xy_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.xy_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.zz_xy[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.zz_xy[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.xx_xy[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.xx_xy[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.yy_xy[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.yy_xy[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.xz_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.xz_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+
+						phi_piezo_region_G_local.pz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] += piezo_fourier_coefficient( 2, 0, displs_convolutions[myid]/(basis.N_Gy_T*basis.N_Gz_T) + idx_x, idx_y, idx_z, idx_x, basis, supercell, parameters, strain_region_G, convolutions_char_strain_region_reduced_local );
+
+					}
+
+				}
+
+			}
+
+			free( convolutions_char_strain_region_local.xx_yz );
+			free( convolutions_char_strain_region_local.yy_yz );
+			free( convolutions_char_strain_region_local.zz_yz );
+			free( convolutions_char_strain_region_local.xy_xz );
+			free( convolutions_char_strain_region_local.yy_xz );
+			free( convolutions_char_strain_region_local.xx_xz );
+			free( convolutions_char_strain_region_local.zz_xz );
+			free( convolutions_char_strain_region_local.xy_yz );
+			free( convolutions_char_strain_region_local.zz_xy );
+			free( convolutions_char_strain_region_local.xx_xy );
+			free( convolutions_char_strain_region_local.yy_xy );
+			free( convolutions_char_strain_region_local.xz_yz );
+
+
+			// Will hold global convolutions between strain tensor components
+			convolutions_char_strain_region.xx_yz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.yy_yz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.zz_yz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.xy_xz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.yy_xz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.xx_xz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.zz_xz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.xy_yz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.zz_xy = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.xx_xy = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.yy_xy = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+			convolutions_char_strain_region.xz_yz = ( complex double* ) calloc( basis.N_Gx_T*basis.N_Gy_T*basis.N_Gz_T, sizeof( complex double ) );
+
+
+			// Gather local parts of central portion of convolutions between strain tensor components
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.xx_yz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.xx_yz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.yy_yz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.yy_yz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.zz_yz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.zz_yz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.xy_xz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.xy_xz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.yy_xz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.yy_xz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.xx_xz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.xx_xz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.zz_xz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.zz_xz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.xy_yz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.xy_yz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.zz_xy, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.zz_xy, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.xx_xy, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.xx_xy, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.yy_xy, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.yy_xy, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+			MPI_Allgatherv( convolutions_char_strain_region_reduced_local.xz_yz, local_size_reduced, MPI_DOUBLE_COMPLEX, convolutions_char_strain_region.xz_yz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_SUB_COMM );
+
+			free( convolutions_char_strain_region_reduced_local.xx_yz );
+			free( convolutions_char_strain_region_reduced_local.yy_yz );
+			free( convolutions_char_strain_region_reduced_local.zz_yz );
+			free( convolutions_char_strain_region_reduced_local.xy_xz );
+			free( convolutions_char_strain_region_reduced_local.yy_xz );
+			free( convolutions_char_strain_region_reduced_local.xx_xz );
+			free( convolutions_char_strain_region_reduced_local.zz_xz );
+			free( convolutions_char_strain_region_reduced_local.xy_yz );
+			free( convolutions_char_strain_region_reduced_local.zz_xy );
+			free( convolutions_char_strain_region_reduced_local.xx_xy );
+			free( convolutions_char_strain_region_reduced_local.yy_xy );
+			free( convolutions_char_strain_region_reduced_local.xz_yz );
+
+
+			// Will hold local part of convolutions between strain tensor components for future calculation of convolutions with shape characteristic functions
+			convolutions_char_strain_region_local.xx_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.yy_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.zz_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xy_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.yy_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xx_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.zz_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xy_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.zz_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xx_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.yy_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.xz_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+
+
+			// Extracting local parts of zero-padded convolutions between strain tensor components from global
+			#pragma omp parallel for collapse( 3 )
+			for ( int global_row = local_start; global_row < local_start + local_rows; global_row++ )
+			{
+
+				for ( int idx_y = 0; idx_y < sizes[1]; idx_y++ )
+				{
+
+					for ( int idx_z = 0; idx_z < sizes[2]; idx_z++ )
+					{
+
+						if ( global_row >= 0 && global_row < basis.N_Gx_T && idx_y >= 0 && idx_y < basis.N_Gy_T && idx_z >= 0 && idx_z < basis.N_Gz_T )
+						{
+
+							convolutions_char_strain_region_local.xx_yz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.xx_yz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.yy_yz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.yy_yz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.zz_yz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.zz_yz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.xy_xz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.xy_xz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.yy_xz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.yy_xz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.xx_xz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.xx_xz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.zz_xz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.zz_xz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.xy_yz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.xy_yz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.zz_xy[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.zz_xy[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.xx_xy[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.xx_xy[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.yy_xy[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.yy_xy[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+							convolutions_char_strain_region_local.xz_yz[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = convolutions_char_strain_region.xz_yz[ ( global_row )*(  basis.N_Gy_T  )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+
+						}
+
+					}
+
+				}
+
+			}
+
+			free( convolutions_char_strain_region.xx_yz );
+			free( convolutions_char_strain_region.yy_yz );
+			free( convolutions_char_strain_region.zz_yz );
+			free( convolutions_char_strain_region.xy_xz );
+			free( convolutions_char_strain_region.yy_xz );
+			free( convolutions_char_strain_region.xx_xz );
+			free( convolutions_char_strain_region.zz_xz );
+			free( convolutions_char_strain_region.xy_yz );
+			free( convolutions_char_strain_region.zz_xy );
+			free( convolutions_char_strain_region.xx_xy );
+			free( convolutions_char_strain_region.yy_xy );
+			free( convolutions_char_strain_region.xz_yz );
+
+
+			// Compute FFT using Dfti library of convolutions between strain tensor components
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.xx_yz ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.yy_yz ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.zz_yz ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.xy_xz ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.yy_xz ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.xx_xz ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.zz_xz ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.xy_yz ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.zz_xy ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.xx_xy ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.yy_xy ), "DftiComputeForwardDM" );
+			check_dfti( DftiComputeForwardDM( task, convolutions_char_strain_region_local.xz_yz ), "DftiComputeForwardDM" );
+
+
+			// Will hold local part of convolutions of convolutions between strain tensor components with shape characteristic functions
+			convolutions_char_strain_region_local.char_xx_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_yy_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_zz_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_xy_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_yy_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_xx_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_zz_xz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_xy_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_zz_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_xx_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_yy_xy = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+			convolutions_char_strain_region_local.char_xz_yz = ( complex double* ) calloc( local_memory_size, sizeof( complex double ) );
+
+
+			// Will hold local part of central portion of convolutions of convolutions between strain tensor components with shape characteristic functions
+			convolutions_char_strain_region_reduced_local.char_xx_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_yy_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_zz_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_xy_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_yy_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_xx_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_zz_xz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_xy_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_zz_xy = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_xx_xy = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_yy_xy = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+			convolutions_char_strain_region_reduced_local.char_xz_yz = ( complex double* ) calloc( local_size_reduced, sizeof( complex double ) );
+
+
+		}
+
+	
+		// Extracting local part of zero-padded shape characteristic function
+		for( int idx_shape = 1; idx_shape < N_shape; idx_shape++ )
+		{
+
+			#pragma omp parallel for collapse( 3 )
+			for ( int global_row = local_start; global_row < local_start + local_rows; global_row++ )
+			{
+
+				for ( int idx_y = 0; idx_y < sizes[1]; idx_y++ )
+				{
+
+					for ( int idx_z = 0; idx_z < sizes[2]; idx_z++ )
+					{
+
+						if ( global_row >= 0 && global_row < basis.N_Gx_T && idx_y >= 0 && idx_y <  basis.N_Gy_T && idx_z >= 0 && idx_z < basis.N_Gz_T )
+						{
+
+							characteristic_function_strain_region_G_local.chi[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = characteristic_function_strain_G[idx_shape].chi[ ( global_row )*( basis.N_Gy_T )*( basis.N_Gz_T ) + ( idx_y )*( basis.N_Gz_T ) + ( idx_z ) ];
+
+						}
+						else
+						{
+
+							characteristic_function_strain_region_G_local.chi[( global_row - local_start )*sizes[1]*sizes[2] + idx_y*sizes[2] + idx_z] = 0;
+
+						}
+
+					}
+
+				}
+
+			}
+
+			// Compute FFT using Dfti library of shape characteristic function
+			check_dfti( DftiComputeForwardDM( task, characteristic_function_strain_region_G_local.chi ), "DftiComputeForwardDM" );
+
+			// Element-by-element multiplication of strain tensor components and shape characteristic functions that were previously FFT calculated
+			vzMul( local_size, characteristic_function_strain_region_G_local.chi, strain_region_G_local.xx, convolutions_char_strain_region_local.char_xx );
+			vzMul( local_size, characteristic_function_strain_region_G_local.chi, strain_region_G_local.yy, convolutions_char_strain_region_local.char_yy );
+			vzMul( local_size, characteristic_function_strain_region_G_local.chi, strain_region_G_local.zz, convolutions_char_strain_region_local.char_zz );
+			vzMul( local_size, characteristic_function_strain_region_G_local.chi, strain_region_G_local.yz, convolutions_char_strain_region_local.char_yz );
+			vzMul( local_size, characteristic_function_strain_region_G_local.chi, strain_region_G_local.xz, convolutions_char_strain_region_local.char_xz );
+			vzMul( local_size, characteristic_function_strain_region_G_local.chi, strain_region_G_local.xy, convolutions_char_strain_region_local.char_xy );
+
+			// Inverse FFT to complete convolution calculations
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xx ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_yy ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_zz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_yz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xz ), "DftiComputeBackwardDM" );
+			check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xy ), "DftiComputeBackwardDM" );
+
+
+			// Extracting central portion of local convolution arrays & computing local part of 1st order piezoelectric potential contribution from shape material 1st order coefficients
+			#pragma omp parallel for collapse( 3 )
+			for ( int idx_x = 0; idx_x < local_rows_reduced; idx_x++ )
+			{
+
+				for ( int idx_y = 0; idx_y < basis.N_Gy_T; idx_y++ )
+				{
+
+					for ( int idx_z = 0; idx_z < basis.N_Gz_T; idx_z++ )
+					{
+
+						convolutions_char_strain_region_reduced_local.char_xx[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xx[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.char_yy[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_yy[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.char_zz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_zz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.char_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.char_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+						convolutions_char_strain_region_reduced_local.char_xy[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xy[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+
+						phi_piezo_region_G_local.pz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] += piezo_fourier_coefficient( 1, idx_shape, displs_convolutions[myid]/(basis.N_Gy_T*basis.N_Gz_T) + idx_x, idx_y, idx_z, idx_x, basis, supercell, parameters, strain_region_G, convolutions_char_strain_region_reduced_local );
+
+					}
+
+				}
+
+			}
+
+			// If the 2nd order piezoelectric potential is included, the following computes the local part of 2nd order piezoelectric potential contribution from shape material 2nd order coefficients
+			if ( include_piezo == 2 || include_piezo == 3)
+			{
+
+				// Element-by-element multiplication of convolutions bewteen strain tensor components and shape characteristic functions that were previously FFT calculated
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.xx_yz, convolutions_char_strain_region_local.char_xx_yz );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.yy_yz, convolutions_char_strain_region_local.char_yy_yz );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.zz_yz, convolutions_char_strain_region_local.char_zz_yz );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.xy_xz, convolutions_char_strain_region_local.char_xy_xz );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.yy_xz, convolutions_char_strain_region_local.char_yy_xz );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.xx_xz, convolutions_char_strain_region_local.char_xx_xz );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.zz_xz, convolutions_char_strain_region_local.char_zz_xz );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.xy_yz, convolutions_char_strain_region_local.char_xy_yz );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.zz_xy, convolutions_char_strain_region_local.char_zz_xy );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.xx_xy, convolutions_char_strain_region_local.char_xx_xy );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.yy_xy, convolutions_char_strain_region_local.char_yy_xy );
+				vzMul( local_size, characteristic_function_strain_region_G_local.chi, convolutions_char_strain_region_local.xz_yz, convolutions_char_strain_region_local.char_xz_yz );
+
+				// Inverse FFT to complete convolution calculations
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xx_yz ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_yy_yz ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_zz_yz ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xy_xz ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_yy_xz ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xx_xz ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_zz_xz ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xy_yz ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_zz_xy ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xx_xy ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_yy_xy ), "DftiComputeBackwardDM" );
+				check_dfti( DftiComputeBackwardDM( task, convolutions_char_strain_region_local.char_xz_yz ), "DftiComputeBackwardDM" );
+
+				// Extracting central portion of local convolution arrays & computing local part of 2nd order piezoelectric potential contribution from shape material 2nd order coefficients
+				#pragma omp parallel for collapse( 3 )
+				for ( int idx_x = 0; idx_x < local_rows_reduced; idx_x++ )
+				{
+
+					for ( int idx_y = 0; idx_y < basis.N_Gy_T; idx_y++ )
+					{
+
+						for ( int idx_z = 0; idx_z < basis.N_Gz_T; idx_z++ )
+						{
+
+							convolutions_char_strain_region_reduced_local.char_xx_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xx_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_yy_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_yy_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_zz_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_zz_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_xy_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xy_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_yy_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_yy_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_xx_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xx_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_zz_xz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_zz_xz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_xy_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xy_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_zz_xy[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_zz_xy[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_xx_xy[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xx_xy[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_yy_xy[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_yy_xy[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+							convolutions_char_strain_region_reduced_local.char_xz_yz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] = convolutions_char_strain_region_local.char_xz_yz[ ( idx_x + local_start_reduced )*( sizes[1] )*( sizes[2] ) + ( idx_y + basis.N_Gy_T / 2 )*( sizes[2] ) + ( idx_z + basis.N_Gz_T / 2 ) ];
+
+							phi_piezo_region_G_local.pz[idx_x*basis.N_Gy_T*basis.N_Gz_T + idx_y*basis.N_Gz_T + idx_z] += piezo_fourier_coefficient( 2, idx_shape, displs_convolutions[myid]/(basis.N_Gy_T*basis.N_Gz_T) + idx_x, idx_y, idx_z, idx_x, basis, supercell, parameters, strain_region_G, convolutions_char_strain_region_reduced_local );
+
+						}
+
+					}
+
+				}
+
+			}
+			
+		}
+
+		// Gathering the local parts of the reciprocal space piezoelectric potential
+		MPI_Allgatherv( phi_piezo_region_G_local.pz, local_size_reduced, MPI_DOUBLE_COMPLEX, phi_piezo_region_G.pz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_COMM_WORLD );
+
+		check_dfti( DftiFreeDescriptorDM( &task ), "DftiFreeDescriptorDM" );
+
+
+		free( characteristic_function_strain_region_G_local.chi );
+
+		free( strain_region_G_local.xx );
+		free( strain_region_G_local.yy );
+		free( strain_region_G_local.zz );
+		free( strain_region_G_local.xz );
+		free( strain_region_G_local.yz );
+		free( strain_region_G_local.xy );
+
+		free( convolutions_char_strain_region_local.char_xx );
+		free( convolutions_char_strain_region_local.char_yy );
+		free( convolutions_char_strain_region_local.char_zz );
+		free( convolutions_char_strain_region_local.char_yz );
+		free( convolutions_char_strain_region_local.char_xz );
+		free( convolutions_char_strain_region_local.char_xy );
+
+		free( convolutions_char_strain_region_reduced_local.char_xx );
+		free( convolutions_char_strain_region_reduced_local.char_yy );
+		free( convolutions_char_strain_region_reduced_local.char_zz );
+		free( convolutions_char_strain_region_reduced_local.char_yz );
+		free( convolutions_char_strain_region_reduced_local.char_xz );
+		free( convolutions_char_strain_region_reduced_local.char_xy );
+
+		free( phi_piezo_region_G_local.pz );
+
+		
+		if ( include_piezo == 2 || include_piezo == 3 )
+		{
+		
+			free( convolutions_char_strain_region_local.xx_yz );
+			free( convolutions_char_strain_region_local.yy_yz );
+			free( convolutions_char_strain_region_local.zz_yz );
+			free( convolutions_char_strain_region_local.xy_xz );
+			free( convolutions_char_strain_region_local.yy_xz );
+			free( convolutions_char_strain_region_local.xx_xz );
+			free( convolutions_char_strain_region_local.zz_xz );
+			free( convolutions_char_strain_region_local.xy_yz );
+			free( convolutions_char_strain_region_local.zz_xy );
+			free( convolutions_char_strain_region_local.xx_xy );
+			free( convolutions_char_strain_region_local.yy_xy );
+			free( convolutions_char_strain_region_local.xz_yz );
+
+			free( convolutions_char_strain_region_local.char_xx_yz );
+			free( convolutions_char_strain_region_local.char_yy_yz );
+			free( convolutions_char_strain_region_local.char_zz_yz );
+			free( convolutions_char_strain_region_local.char_xy_xz );
+			free( convolutions_char_strain_region_local.char_yy_xz );
+			free( convolutions_char_strain_region_local.char_xx_xz );
+			free( convolutions_char_strain_region_local.char_zz_xz );
+			free( convolutions_char_strain_region_local.char_xy_yz );
+			free( convolutions_char_strain_region_local.char_zz_xy );
+			free( convolutions_char_strain_region_local.char_xx_xy );
+			free( convolutions_char_strain_region_local.char_yy_xy );
+			free( convolutions_char_strain_region_local.char_xz_yz );
+
+			free( convolutions_char_strain_region_reduced_local.char_xx_yz );
+			free( convolutions_char_strain_region_reduced_local.char_yy_yz );
+			free( convolutions_char_strain_region_reduced_local.char_zz_yz );
+			free( convolutions_char_strain_region_reduced_local.char_xy_xz );
+			free( convolutions_char_strain_region_reduced_local.char_yy_xz );
+			free( convolutions_char_strain_region_reduced_local.char_xx_xz );
+			free( convolutions_char_strain_region_reduced_local.char_zz_xz );
+			free( convolutions_char_strain_region_reduced_local.char_xy_yz );
+			free( convolutions_char_strain_region_reduced_local.char_zz_xy );
+			free( convolutions_char_strain_region_reduced_local.char_xx_xy );
+			free( convolutions_char_strain_region_reduced_local.char_yy_xy );
+			free( convolutions_char_strain_region_reduced_local.char_xz_yz );
+			
+		}
+
+	}
+	else // Processes with IDs greater than or equal to the process limit
+	{
+
+		local_start_reduced = 0;
+		local_rows_reduced = 0;
+		local_size_reduced = 0;
+
+		// Gathering information on number of local reduced convolution array elements that will be sent by each process
+		MPI_Allgatherv( &local_size_reduced, 1, MPI_INT, recvcounts_convolutions, recvcounts, displs, MPI_INT, MPI_COMM_WORLD );
+
+		for ( int proc = 0; proc < nprocs; proc++ )
+		{
+
+			displs_convolutions[proc] = ( proc == 0 ? 0 : displs_convolutions[proc - 1] + recvcounts_convolutions[proc - 1] );
+		
+		}
+
+		// Gathering the local parts of the reciprocal space piezoelectric potential
+		MPI_Allgatherv( phi_piezo_region_G_local.pz, local_size_reduced, MPI_DOUBLE_COMPLEX, phi_piezo_region_G.pz, recvcounts_convolutions, displs_convolutions, MPI_DOUBLE_COMPLEX, MPI_COMM_WORLD );
+
+	}
+
+
+	MPI_Comm_free( &MPI_SUB_COMM );
+
+	
+	free( recvcounts );
+	free( recvcounts_convolutions );
+
+	free( displs );
+	free( displs_convolutions );
+
+}

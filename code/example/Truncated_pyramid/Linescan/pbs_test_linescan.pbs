@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# QUantum Dot Open-source Simulator (QUDOS)
+#
+# Copyright (c) 2025
+# Tommy Murphy and Christopher A. Broderick
+#
+# This file is part of QUDOS.
+#
+# QUDOS is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your discretion) any later version.
+#
+# QUDOS is distributed in the hope that it will be useful, but without any warranty and
+# without an implied warranty of merchantability or fitness for a particular purpose.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with QUDOS.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+# Alternative commercial licensing terms may be available from the copyright holders upon request.
+#
+# 
+#
+# Example PBS job run script for linescan code that requests 32 cores (tested on Tyndall cluster)
+#
+
+
+#PBS -m bae
+#PBS -N 8_band
+#PBS -q default
+#PBS -l nodes=1:ppn=32
+
+
+# Loading Intel MKL environment variables
+
+source /local/intel2019/bin/compilervars.sh intel64
+
+
+# 32 OpenMP threads
+
+export OMP_NUM_THREADS=32
+export MKL_NUM_THREADS=32
+
+
+# PBS boilerplate
+
+cd $PBS_O_WORKDIR # job submit directory
+
+
+# Running calculation
+
+"QUDOS root"/code/build/8_band_line.ex

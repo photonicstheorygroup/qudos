@@ -1,0 +1,1740 @@
+# QUantum Dot Open-source Simulator (QUDOS)
+#
+# Copyright (c) 2025
+# Tommy Murphy and Christopher A. Broderick
+#
+# This file is part of QUDOS.
+#
+# QUDOS is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your discretion) any later version.
+#
+# QUDOS is distributed in the hope that it will be useful, but without any warranty and
+# without an implied warranty of merchantability or fitness for a particular purpose.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with QUDOS.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+# Alternative commercial licensing terms may be available from the copyright holders upon request.
+
+
+# Supercell parameters 
+
+QD shape: 0 
+Material: 0 
+Compos x: 0.000000
+Compos y: 0.000000
+Length 1: 60.000000
+Length 2: 60.000000
+Length 3: 35.000000
+Strain length 1: 3
+Strain length 2: 3
+Strain length 3: 4
+Coulomb length 1: 1
+Coulomb length 2: 1
+Coulomb length 3: 2
+
+
+# Shape parameters
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.497500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -3.100000
+Length 1: 15.500000
+Length 2: 15.500000
+Length 3: 15.422500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.492500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -3.038000
+Length 1: 15.422500
+Length 2: 15.422500
+Length 3: 15.345000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.487500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.976000
+Length 1: 15.345000
+Length 2: 15.345000
+Length 3: 15.267500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.482500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.914000
+Length 1: 15.267500
+Length 2: 15.267500
+Length 3: 15.190000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.477500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.852000
+Length 1: 15.190000
+Length 2: 15.190000
+Length 3: 15.112500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.472500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.790000
+Length 1: 15.112500
+Length 2: 15.112500
+Length 3: 15.035000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.467500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.728000
+Length 1: 15.035000
+Length 2: 15.035000
+Length 3: 14.957500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.462500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.666000
+Length 1: 14.957500
+Length 2: 14.957500
+Length 3: 14.880000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.457500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.604000
+Length 1: 14.880000
+Length 2: 14.880000
+Length 3: 14.802500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.452500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.542000
+Length 1: 14.802500
+Length 2: 14.802500
+Length 3: 14.725000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.447500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.480000
+Length 1: 14.725000
+Length 2: 14.725000
+Length 3: 14.647500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.442500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.418000
+Length 1: 14.647500
+Length 2: 14.647500
+Length 3: 14.570000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.437500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.356000
+Length 1: 14.570000
+Length 2: 14.570000
+Length 3: 14.492500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.432500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.294000
+Length 1: 14.492500
+Length 2: 14.492500
+Length 3: 14.415000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.427500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.232000
+Length 1: 14.415000
+Length 2: 14.415000
+Length 3: 14.337500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.422500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.170000
+Length 1: 14.337500
+Length 2: 14.337500
+Length 3: 14.260000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.417500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.108000
+Length 1: 14.260000
+Length 2: 14.260000
+Length 3: 14.182500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.412500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -2.046000
+Length 1: 14.182500
+Length 2: 14.182500
+Length 3: 14.105000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.407500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.984000
+Length 1: 14.105000
+Length 2: 14.105000
+Length 3: 14.027500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.402500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.922000
+Length 1: 14.027500
+Length 2: 14.027500
+Length 3: 13.950000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.397500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.860000
+Length 1: 13.950000
+Length 2: 13.950000
+Length 3: 13.872500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.392500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.798000
+Length 1: 13.872500
+Length 2: 13.872500
+Length 3: 13.795000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.387500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.736000
+Length 1: 13.795000
+Length 2: 13.795000
+Length 3: 13.717500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.382500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.674000
+Length 1: 13.717500
+Length 2: 13.717500
+Length 3: 13.640000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.377500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.612000
+Length 1: 13.640000
+Length 2: 13.640000
+Length 3: 13.562500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.372500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.550000
+Length 1: 13.562500
+Length 2: 13.562500
+Length 3: 13.485000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.367500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.488000
+Length 1: 13.485000
+Length 2: 13.485000
+Length 3: 13.407500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.362500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.426000
+Length 1: 13.407500
+Length 2: 13.407500
+Length 3: 13.330000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.357500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.364000
+Length 1: 13.330000
+Length 2: 13.330000
+Length 3: 13.252500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.352500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.302000
+Length 1: 13.252500
+Length 2: 13.252500
+Length 3: 13.175000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.347500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.240000
+Length 1: 13.175000
+Length 2: 13.175000
+Length 3: 13.097500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.342500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.178000
+Length 1: 13.097500
+Length 2: 13.097500
+Length 3: 13.020000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.337500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.116000
+Length 1: 13.020000
+Length 2: 13.020000
+Length 3: 12.942500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.332500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -1.054000
+Length 1: 12.942500
+Length 2: 12.942500
+Length 3: 12.865000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.327500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.992000
+Length 1: 12.865000
+Length 2: 12.865000
+Length 3: 12.787500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.322500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.930000
+Length 1: 12.787500
+Length 2: 12.787500
+Length 3: 12.710000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.317500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.868000
+Length 1: 12.710000
+Length 2: 12.710000
+Length 3: 12.632500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.312500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.806000
+Length 1: 12.632500
+Length 2: 12.632500
+Length 3: 12.555000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.307500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.744000
+Length 1: 12.555000
+Length 2: 12.555000
+Length 3: 12.477500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.302500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.682000
+Length 1: 12.477500
+Length 2: 12.477500
+Length 3: 12.400000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.297500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.620000
+Length 1: 12.400000
+Length 2: 12.400000
+Length 3: 12.322500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.292500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.558000
+Length 1: 12.322500
+Length 2: 12.322500
+Length 3: 12.245000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.287500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.496000
+Length 1: 12.245000
+Length 2: 12.245000
+Length 3: 12.167500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.282500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.434000
+Length 1: 12.167500
+Length 2: 12.167500
+Length 3: 12.090000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.277500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.372000
+Length 1: 12.090000
+Length 2: 12.090000
+Length 3: 12.012500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.272500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.310000
+Length 1: 12.012500
+Length 2: 12.012500
+Length 3: 11.935000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.267500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.248000
+Length 1: 11.935000
+Length 2: 11.935000
+Length 3: 11.857500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.262500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.186000
+Length 1: 11.857500
+Length 2: 11.857500
+Length 3: 11.780000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.257500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.124000
+Length 1: 11.780000
+Length 2: 11.780000
+Length 3: 11.702500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.252500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: -0.062000
+Length 1: 11.702500
+Length 2: 11.702500
+Length 3: 11.625000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.247500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.000000
+Length 1: 11.625000
+Length 2: 11.625000
+Length 3: 11.547500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.242500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.062000
+Length 1: 11.547500
+Length 2: 11.547500
+Length 3: 11.470000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.237500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.124000
+Length 1: 11.470000
+Length 2: 11.470000
+Length 3: 11.392500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.232500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.186000
+Length 1: 11.392500
+Length 2: 11.392500
+Length 3: 11.315000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.227500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.248000
+Length 1: 11.315000
+Length 2: 11.315000
+Length 3: 11.237500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.222500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.310000
+Length 1: 11.237500
+Length 2: 11.237500
+Length 3: 11.160000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.217500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.372000
+Length 1: 11.160000
+Length 2: 11.160000
+Length 3: 11.082500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.212500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.434000
+Length 1: 11.082500
+Length 2: 11.082500
+Length 3: 11.005000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.207500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.496000
+Length 1: 11.005000
+Length 2: 11.005000
+Length 3: 10.927500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.202500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.558000
+Length 1: 10.927500
+Length 2: 10.927500
+Length 3: 10.850000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.197500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.620000
+Length 1: 10.850000
+Length 2: 10.850000
+Length 3: 10.772500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.192500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.682000
+Length 1: 10.772500
+Length 2: 10.772500
+Length 3: 10.695000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.187500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.744000
+Length 1: 10.695000
+Length 2: 10.695000
+Length 3: 10.617500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.182500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.806000
+Length 1: 10.617500
+Length 2: 10.617500
+Length 3: 10.540000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.177500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.868000
+Length 1: 10.540000
+Length 2: 10.540000
+Length 3: 10.462500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.172500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.930000
+Length 1: 10.462500
+Length 2: 10.462500
+Length 3: 10.385000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.167500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.992000
+Length 1: 10.385000
+Length 2: 10.385000
+Length 3: 10.307500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.162500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.054000
+Length 1: 10.307500
+Length 2: 10.307500
+Length 3: 10.230000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.157500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.116000
+Length 1: 10.230000
+Length 2: 10.230000
+Length 3: 10.152500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.152500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.178000
+Length 1: 10.152500
+Length 2: 10.152500
+Length 3: 10.075000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.147500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.240000
+Length 1: 10.075000
+Length 2: 10.075000
+Length 3: 9.997500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.142500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.302000
+Length 1: 9.997500
+Length 2: 9.997500
+Length 3: 9.920000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.137500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.364000
+Length 1: 9.920000
+Length 2: 9.920000
+Length 3: 9.842500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.132500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.426000
+Length 1: 9.842500
+Length 2: 9.842500
+Length 3: 9.765000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.127500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.488000
+Length 1: 9.765000
+Length 2: 9.765000
+Length 3: 9.687500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.122500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.550000
+Length 1: 9.687500
+Length 2: 9.687500
+Length 3: 9.610000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.117500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.612000
+Length 1: 9.610000
+Length 2: 9.610000
+Length 3: 9.532500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.112500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.674000
+Length 1: 9.532500
+Length 2: 9.532500
+Length 3: 9.455000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.107500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.736000
+Length 1: 9.455000
+Length 2: 9.455000
+Length 3: 9.377500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.102500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.798000
+Length 1: 9.377500
+Length 2: 9.377500
+Length 3: 9.300000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.097500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.860000
+Length 1: 9.300000
+Length 2: 9.300000
+Length 3: 9.222500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.092500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.922000
+Length 1: 9.222500
+Length 2: 9.222500
+Length 3: 9.145000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.087500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 1.984000
+Length 1: 9.145000
+Length 2: 9.145000
+Length 3: 9.067500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.082500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.046000
+Length 1: 9.067500
+Length 2: 9.067500
+Length 3: 8.990000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.077500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.108000
+Length 1: 8.990000
+Length 2: 8.990000
+Length 3: 8.912500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.072500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.170000
+Length 1: 8.912500
+Length 2: 8.912500
+Length 3: 8.835000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.067500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.232000
+Length 1: 8.835000
+Length 2: 8.835000
+Length 3: 8.757500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.062500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.294000
+Length 1: 8.757500
+Length 2: 8.757500
+Length 3: 8.680000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.057500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.356000
+Length 1: 8.680000
+Length 2: 8.680000
+Length 3: 8.602500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.052500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.418000
+Length 1: 8.602500
+Length 2: 8.602500
+Length 3: 8.525000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.047500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.480000
+Length 1: 8.525000
+Length 2: 8.525000
+Length 3: 8.447500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.042500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.542000
+Length 1: 8.447500
+Length 2: 8.447500
+Length 3: 8.370000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.037500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.604000
+Length 1: 8.370000
+Length 2: 8.370000
+Length 3: 8.292500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.032500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.666000
+Length 1: 8.292500
+Length 2: 8.292500
+Length 3: 8.215000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.027500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.728000
+Length 1: 8.215000
+Length 2: 8.215000
+Length 3: 8.137500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.022500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.790000
+Length 1: 8.137500
+Length 2: 8.137500
+Length 3: 8.060000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.017500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.852000
+Length 1: 8.060000
+Length 2: 8.060000
+Length 3: 7.982500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.012500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.914000
+Length 1: 7.982500
+Length 2: 7.982500
+Length 3: 7.905000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.007500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 2.976000
+Length 1: 7.905000
+Length 2: 7.905000
+Length 3: 7.827500
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+
+Embedded: 0 
+QD shape: 6 
+Material: 3 
+Compos x: 0.002500
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 3.038000
+Length 1: 7.827500
+Length 2: 7.827500
+Length 3: 7.750000
+Length 4: 0.062000
+Length 5: 0.000000
+Euler alpha angle: 0.000000
+Euler beta angle: 0.000000
+Euler gamma angle: 0.000000
+

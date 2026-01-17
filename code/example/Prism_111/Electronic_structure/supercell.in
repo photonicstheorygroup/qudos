@@ -1,0 +1,56 @@
+# QUantum Dot Open-source Simulator (QUDOS)
+#
+# Copyright (c) 2025
+# Tommy Murphy and Christopher A. Broderick
+#
+# This file is part of QUDOS.
+#
+# QUDOS is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your discretion) any later version.
+#
+# QUDOS is distributed in the hope that it will be useful, but without any warranty and
+# without an implied warranty of merchantability or fitness for a particular purpose.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with QUDOS.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+# Alternative commercial licensing terms may be available from the copyright holders upon request.
+
+
+# Supercell parameters 
+
+QD shape: 0 
+Material: 0 
+Compos x: 1.000000
+Compos y: 0.000000
+Length 1: 20.000000
+Length 2: 20.000000
+Length 3: 20.000000
+Strain length 1: 1
+Strain length 2: 1
+Strain length 3: 1
+Coulomb length 1: 20.0
+Coulomb length 2: 20.0
+Coulomb length 3: 20.0
+
+
+# Shape parameters
+
+Embedded: 0 
+QD shape: 16 
+Material: 0 
+Compos x: 0.000000
+Compos y: 0.000000
+Centre x: 0.000000
+Centre y: 0.000000
+Centre z: 0.000000
+Length 1: 4.330127
+Length 2: 3.000000
+Length 3: 3.000000
+Length 4: 0.000000
+Length 5: 0.000000
+Euler alpha angle: 45.000000
+Euler beta angle: 54.7356103172
+Euler gamma angle: 0.000000

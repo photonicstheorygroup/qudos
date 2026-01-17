@@ -1,0 +1,27 @@
+Electronic structure supercell size:
+
+	(Lx, Ly, Lz) = (2.0000e+01, 2.0000e+01, 2.0000e+01) [nm]
+	Volume       =  8.0000e+03 [nm^3]           
+
+
+Strain supercell size:
+
+	(LSx, LSy, LSz) = (2.0000e+01, 2.0000e+01, 2.0000e+01) [nm]
+	Volume       =  8.0000e+03 [nm^3]           
+
+
+Plane wave vectors:
+
+	(M_Gx, M_Gy, M_Gz) = (10, 10, 10)
+	(N_Gx, N_Gy, N_Gz) = (21, 21, 21) = (2*M_Gx + 1, 2*M_Gy + 1, 2*M_Gz + 1)
+
+	max(|Gx|, |Gy|, |Gz|) = (3.1416e+00, 3.1416e+00, 3.1416e+00) [nm^-1]
+
+	Cut-off energy = 1.1281e+00 [eV]
+Strain supercell plane wave vectors:
+
+	(M_S_Gx, M_S_Gy, M_S_Gz) = (10, 10, 10)
+	(N_S_Gx, N_S_Gy, N_S_Gz) = (21, 21, 21) = (2*M_S_Gx + 1, 2*M_S_Gy + 1, 2*M_S_Gz + 1)
+
+	max(|GSx|, |GSy|, |GSz|) = (3.1416e+00, 3.1416e+00, 3.1416e+00) [nm^-1]
+

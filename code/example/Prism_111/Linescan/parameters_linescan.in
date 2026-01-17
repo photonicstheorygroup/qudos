@@ -1,0 +1,86 @@
+# QUantum Dot Open-source Simulator (QUDOS)
+#
+# Copyright (c) 2025
+# Tommy Murphy and Christopher A. Broderick
+#
+# This file is part of QUDOS.
+#
+# QUDOS is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your discretion) any later version.
+#
+# QUDOS is distributed in the hope that it will be useful, but without any warranty and
+# without an implied warranty of merchantability or fitness for a particular purpose.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with QUDOS.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+# Alternative commercial licensing terms may be available from the copyright holders upon request.
+
+
+# Number of shapes in supercell (including supercell)
+N_shape: 2
+
+# Number of plane waves for electronic structure supercell
+M_Gx: 10     # N_Gx = 2*M_Gx + 1 = Total no. of plane waves along x
+M_Gy: 10     # N_Gy = 2*M_Gy + 1 = Total no. of plane waves along y
+M_Gz: 10     # N_Gz = 2*M_Gz + 1 = Total no. of plane waves along z
+
+# Strain supercell parameters
+Strain_supercell_type: 0    # Indicates whether to use free strain supercell lengths (0) or to set them to be integer multiples of the electronic structure supercell lengths (1) allowing much faster strain and piezoelectric potential conversion from the strain supercell to the electronic structure supercell.
+M_S_Gx: 10   # N_S_Gx = 2*M_S_Gx + 1 = Total no. of plane waves along x
+M_S_Gy: 10   # N_S_Gy = 2*M_S_Gy + 1 = Total no. of plane waves along y
+M_S_Gz: 10   # N_S_Gz = 2*M_S_Gz + 1 = Total no. of plane waves along z
+
+# System temperature [K]
+T: 300.0
+
+# Applied electric field in kV/cm
+Fx: 0       # x component
+Fy: 0       # y component
+Fz: 0       # z component
+
+# Number of real space points for envelope function linescans
+N_line: 300
+
+# Isotropic approximation for elastic tensor
+Isotropic: 0    # 0 for anisotropic, 1 for isotropic
+
+# Position-dependent elastic constants
+Elastic_const: 0    # 0 for position-independent (uses those of matrix), 1 for position-depenent (via a perturbative technique)
+
+# Order of correction is using position-dependent elastic constants (if Elastic_const = 1)
+Elastic_const_order: 0  
+
+# Include piezoelectric potential in calculation
+Piezo: 2        # 0 for no piezoelectricity, = 1 for 1st order only, = 2 for 1st and 2nd order, = 3 for 2nd order only
+
+# Interface softening via Gaussian convolution
+Softening: 1    # 1 for interface softening, = 0 for "hard" interface calculation
+Sigma_softening: 0.4   # Standard deviation of Gaussian used for interface softening, in nm
+
+# Set directions along which to compute real space linescans (linescans go through centre of supercell)
+Linescan_100: 1     # 1 to compute linescan along [100], 0 to disable
+Linescan_010: 1     # 1 to compute linescan along [010], 0 to disable
+Linescan_001: 1     # 1 to compute linescan along [001], 0 to disable
+Linescan_110: 1     # 1 to compute linescan along [110], 0 to disable
+Linescan_101: 0     # 1 to compute linescan along [101], 0 to disable
+Linescan_011: 0     # 1 to compute linescan along [011], 0 to disable
+Linescan_111: 1     # 1 to compute linescan along [111], 0 to disable
+
+# Indicate whether to output cross-sections of envelope functions
+Cross_sections: 1       # 0 to disable, 1 to enable
+
+# Number of real-space grid points for each of the two dimensions for cross-sections
+N_cross: 50
+
+# Set normals of which to compute real space cross-sections (cross-sections go through centre of supercell)
+Cross_section_100: 1    # 1 to compute cross-sections with normal along [100], 0 to disable
+Cross_section_010: 1    # 1 to compute cross-sections with normal along [010], 0 to disable
+Cross_section_001: 1    # 1 to compute cross-sections with normal along [001], 0 to disable
+Cross_section_m110: 1   # 1 to compute cross-sections with normal along [-110], 0 to disable
+Cross_section_110: 0    # 1 to compute cross-sections with normal along [110], 0 to disable
+Cross_section_m101: 0   # 1 to compute cross-sections with normal along [-101], 0 to disable
+Cross_section_0m11: 0   # 1 to compute cross-sections with normal along [0-11], 0 to disable
+Cross_section_111: 1   # 1 to compute cross-sections with normal along [111], 0 to disable

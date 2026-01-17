@@ -1,0 +1,251 @@
+# QUantum Dot Open-source Simulator (QUDOS)
+#
+# Copyright (c) 2025
+# Tommy Murphy and Christopher A. Broderick
+#
+# This file is part of QUDOS.
+#
+# QUDOS is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your discretion) any later version.
+#
+# QUDOS is distributed in the hope that it will be useful, but without any warranty and
+# without an implied warranty of merchantability or fitness for a particular purpose.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with QUDOS.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+# Alternative commercial licensing terms may be available from the copyright holders upon request.
+#
+#
+#
+#
+# Makefile for Intel OneAPI icx compiler
+#
+
+
+
+#######################################
+#### Set home directory of package ####
+#######################################
+
+PW_PATH = $(shell realpath ../)
+
+
+############################################################
+#### Set generic compiler options and link to libraries ####
+############################################################
+
+CC           =  mpiicx
+CC_FLAGS     = -O3 -std=c11 -Wall -DMKL_ILP64
+CLIB_FLAGS   = -lyaml -lmkl_scalapack_ilp64 -lmkl_cdft_core -lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -lmkl_blacs_intelmpi_ilp64 -liomp5 -lpthread -lm -ldl
+HEADER_FLAGS = -I${MKLROOT}/include -I$(PW_PATH)/source/parameters/ # Path to directory containing material parameter header file (material_parameters.h)
+OPENMP_FLAGS = -fiopenmp
+GSL_FLAGS    = -lgsl -lgslcblas
+
+
+#######################################################
+#### Set compilation variables for each executable ####
+#######################################################
+
+# Strain and band edge energy linescans - 8-band model
+
+exec_8_band_linescan = 8_band_line.ex # Name of the executable to be created
+
+path_8_band_linescan = $(PW_PATH)/source/linescan/8_band/
+
+objs_8_band_linescan =  8_band_linescan_main.c                 \
+				   band_edge_energies_real_space.c             \
+				   basis_set.c                                 \
+				   characteristic_function_fourier.c           \
+				   characteristic_function_fourier_integrals.c \
+				   characteristic_functions_reciprocal_space.c \
+				   characteristic_function_real_space.c        \
+				   check_vsl.c                                 \
+				   convolutions_strain_correction.c		       \
+				   copy_output.c                               \
+				   determine_idx_shape.c                       \
+				   eigenstates_real_space.c                    \
+				   hamiltonian_8_band_bulk.c                   \
+				   interpolate_quaternary.c                    \
+				   interpolate_interface.c                     \
+				   kronecker_delta.c                           \
+				   material_parameters.c                       \
+				   piezo_fourier_coefficient.c                 \
+				   piezo_real_space.c                          \
+				   piezo_region_reciprocal_space.c             \
+				   piezo_reciprocal_space.c                    \
+				   piezo_reciprocal_space_fft.c                \
+				   read_command_line_input.c                   \
+				   read_parameters.c                   		   \
+				   read_supercell.c                            \
+				   real_space_grid_linescan.c                  \
+				   real_space_grid_cross_section.c             \
+				   strain_fourier_coefficient.c                \
+				   strain_real_space.c                         \
+				   strain_reciprocal_space.c                   \
+				   strain_reciprocal_space_fft.c               \
+				   strain_region_reciprocal_space.c            \
+				   trapezoidal_rule.c                          \
+				   write_band_edge_energies_linescan.c         \
+				   write_band_edge_energies_cross_section.c    \
+				   write_basis_set.c                           \
+				   write_piezo_linescan.c                      \
+				   write_piezo_cross_section.c                 \
+				   write_strain_linescan.c                     \
+				   write_strain_cross_section.c                \
+				   write_supercell.c
+
+srcs_8_band_linescan = $(addprefix $(path_8_band_linescan),$(objs_8_band_linescan))
+
+
+# Plane wave expansion method - 8-band model
+
+exec_8_band_pwem = 8_band_pwem.ex # Name of the executable to be created
+
+path_8_band_pwem = $(PW_PATH)/source/8_band/
+
+objs_8_band_pwem = 8_band_main.c                                    \
+				B_convolutions.c                               		\
+				B_coulomb_supercell.c                               \
+				B_coulomb_supercell_fft.c                           \
+			    basis_set.c                                        	\
+				blacs_functions.c                                   \
+			    bloch_character.c                                  	\
+				characteristic_function_coulomb_supercell.c        	\
+			    characteristic_function_fourier.c                  	\
+			    characteristic_function_fourier_integrals.c        	\
+			    characteristic_functions_reciprocal_space.c        	\
+				check_dfti.c                                        \
+			    carrier_localisation.c                             	\
+			    collect_eigenstates.c                              	\
+			    convolutions.c						                \
+				convolutions_strain_correction.c					\
+				copy_output.c                                       \
+				coulomb_integrals.c                             	\
+				coulomb_matrix_elements.c                          	\
+			    diagonalise_hamiltonian.c                          	\
+			    eigenstates.c                                      	\
+			    envelope_functions.c                               	\
+			    field_fourier_coefficient.c                        	\
+			    hamiltonian_8_band.c                               	\
+			    hamiltonian_8_band_matrix_elements.c               	\
+			    hamiltonian_derivative_8_band.c                    	\
+			    hamiltonian_derivative_8_band_matrix_elements.c    	\
+			    interpolate_quaternary.c                           	\
+			    kronecker_delta.c                                  	\
+			    lineshape_gaussian.c                               	\
+			    material_parameters.c                              	\
+			    momentum_matrix_element.c                          	\
+			    parameter_matrix_element.c                         	\
+			    piezo_fourier_coefficient.c                        	\
+				piezo_region_reciprocal_space.c                     \
+				piezo_reciprocal_space.c                            \
+				piezo_reciprocal_space_fft.c                        \
+			    read_command_line_input.c                          	\
+				read_parameters.c                   				\
+			    read_supercell.c                                   	\
+			    real_space_grid_cross_section.c                    	\
+			    real_space_grid_linescan.c                         	\
+				real_space_grid_3D.c                    	        \
+				redistribute_eigenstate.c 							\
+			    spatial_overlap.c                                  	\
+				state_redistribution.c								\
+			    strain_fourier_coefficient.c                       	\
+			    strain_region_reciprocal_space.c                    \
+			    strain_reciprocal_space.c                          	\
+				strain_reciprocal_space_fft.c                       \
+			    trapezoidal_rule.c                                 	\
+			    write_basis_set.c                                  	\
+				write_calculation_times.c                       	\
+			    write_carrier_localisation.c                       	\
+				write_coulomb_matrix_elements.c                   	\
+			    write_energies.c                                   	\
+			    write_envelope_functions.c                         	\
+			    write_envelope_functions_cross_section.c           	\
+				write_envelope_functions_3D.c           	        \
+			    write_momentum_matrix_elements.c                   	\
+			    write_overlaps.c                                   	\
+			    write_probability_density.c                        	\
+			    write_probability_density_cross_section.c          	\
+				write_probability_density_3D.c                      \
+			    write_supercell.c
+
+srcs_8_band_pwem = $(addprefix $(path_8_band_pwem),$(objs_8_band_pwem))
+
+
+# Plane wave expansion method - 8-band model - memory calculator
+
+exec_8_band_pwem_memory = 8_band_pwem_memory.ex # Name of the executable to be created
+
+path_8_band_pwem_memory = $(PW_PATH)/source/8_band/memory_calculator/
+
+objs_8_band_pwem_memory =  8_band_main.c                            \
+			    basis_set.c                                        	\
+				B_convolutions.c									\
+			    characteristic_functions_reciprocal_space.c        	\
+			    convolutions.c						                \
+				coulomb_matrix_elements.c							\
+			    diagonalise_hamiltonian.c                          	\
+			    eigenstates.c                                      	\
+			    mpi_functions.c                                    	\
+				piezo_region_reciprocal_space.c                     \
+			    read_command_line_input.c                          	\
+				read_parameters.c                   				\
+			    read_supercell.c                                   	\
+			    strain_region_reciprocal_space.c                    \
+				strain_reciprocal_space_fft.c                     	\
+			    write_basis_set.c                                  	\
+			    write_memory_usage.c     
+
+srcs_8_band_pwem_memory = $(addprefix $(path_8_band_pwem_memory),$(objs_8_band_pwem_memory))
+
+
+######################################################################
+#### List all executables that are to be created during the build ####
+######################################################################
+
+all: $(exec_8_band_linescan) $(exec_8_band_pwem) $(exec_8_band_pwem_memory)
+
+
+#################
+#### Compile ####
+#################
+
+# Strain and band edge energy linescans - 8-band model
+
+$(exec_8_band_linescan) : $(srcs_8_band_linescan)
+	@echo ""
+	@echo "Compiling: strain and band edge energy linescans, 8-band model - $(exec_8_band_linescan)"
+	@echo ""
+	$(CC) $(CC_FLAGS) $^ -o $@ $(HEADER_FLAGS) $(CLIB_FLAGS) $(LAPACK_FLAGS) $(GSL_FLAGS) $(OPENMP_FLAGS)
+	@echo ""
+	@echo "Compiled successfully: the executable $(exec_8_band_linescan) has been created in $(PW_PATH)/build/"
+	@echo ""
+
+
+# Plane wave expansion method - 8-band model
+
+$(exec_8_band_pwem) : $(srcs_8_band_pwem)
+	@echo ""
+	@echo "Compiling: plane wave expansion method, 8-band model - $(exec_8_band_pwem)"
+	@echo ""
+	$(CC) $(CC_FLAGS) $^ -o $@ $(HEADER_FLAGS) $(CLIB_FLAGS) $(LAPACK_FLAGS) $(GSL_FLAGS) $(OPENMP_FLAGS)
+	@echo ""
+	@echo "Compiled successfully: the executable $(exec_8_band_pwem) has been created in $(PW_PATH)/build/"
+	@echo ""
+
+
+CCM_FLAGS     = -O3 -std=c11 -Wall -DMKL_ILP64 -Wno-unused-variable -Wno-uninitialized -Wno-unused-but-set-variable
+
+# Plane wave expansion method - 8-band model - memory calculator
+
+$(exec_8_band_pwem_memory) : $(srcs_8_band_pwem_memory)
+	@echo ""
+	@echo "Compiling: plane wave expansion method memory, 8-band model - $(exec_8_band_pwem_memory)"
+	@echo ""
+	$(CC) $(CCM_FLAGS) $^ -o $@ $(HEADER_FLAGS) $(CLIB_FLAGS) $(LAPACK_FLAGS) $(GSL_FLAGS) $(OPENMP_FLAGS)
+	@echo ""
+	@echo "Compiled successfully: the executable $(exec_8_band_pwem_memory) has been created in $(PW_PATH)/build/"
+	@echo ""

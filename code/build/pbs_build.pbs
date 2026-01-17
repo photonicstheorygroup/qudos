@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# QUantum Dot Open-source Simulator (QUDOS)
+#
+# Copyright (c) 2025
+# Tommy Murphy and Christopher A. Broderick
+#
+# This file is part of QUDOS.
+#
+# QUDOS is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your discretion) any later version.
+#
+# QUDOS is distributed in the hope that it will be useful, but without any warranty and
+# without an implied warranty of merchantability or fitness for a particular purpose.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with QUDOS.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+# Alternative commercial licensing terms may be available from the copyright holders upon request.
+#
+# 
+#
+# Example PBS job run script to compile QUDOS code
+#
+
+
+#PBS -m bae
+#PBS -N 8_band
+#PBS -q default
+#PBS -l nodes=1:ppn=1
+
+
+# Loading Intel compiler variables
+
+source /local/intel2019/bin/compilervars.sh intel64
+
+
+# PBS boilerplate
+
+cd $PBS_O_WORKDIR # job submit directory
+
+
+# Compiling QUDOS
+
+make
