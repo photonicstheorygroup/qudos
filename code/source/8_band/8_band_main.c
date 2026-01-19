@@ -1405,6 +1405,8 @@ int main( int argc, char *argv[] )
 			write_overlaps( N_states, overlaps );
 			
 		}
+	
+		free( overlaps );
 
 		finish = MPI_Wtime();
 		elapsed = finish - start;
@@ -1956,11 +1958,7 @@ int main( int argc, char *argv[] )
 	
 	free( eigenstate_cb );
 	free( eigenstate_vb );
-	
-	//free( overlaps );
-	
-	BLACS_GRIDEXIT(&my_blacs_ctxt);
-	MPI_Finalize();
+
 
 	if ( myid == 0 )
 	{
@@ -1968,6 +1966,10 @@ int main( int argc, char *argv[] )
 		printf( "Run complete.\n");
 
 	}
+
+	
+	BLACS_GRIDEXIT(&my_blacs_ctxt);
+	MPI_Finalize();
 
 	return 0;
 
