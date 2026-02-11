@@ -2,7 +2,7 @@
 QUDOS
 =====
 
-<!-- start docs -->
+.. start-docs
 
 QUDOS is the QUantum Dot Open-source Simulator. QUDOS is an free, open-source software package that underpins predictive analysis and design of structures incorporating quantum dots for materials with zinc-blende crystal structures.
 
@@ -31,4 +31,4 @@ to accelerate performance.
 
 QUDOS is released under the terms of the GNU General Public License (GPL) v3.0. Alternative commercial licensing terms may be available from the copyright holders upon request.
 
-<!-- end docs -->
+.. end-docs

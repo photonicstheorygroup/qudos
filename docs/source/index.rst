@@ -7,8 +7,8 @@ Welcome to QUDOS's documentation!
 =================================
 
 .. include:: ../../README.rst
-   :start-after: <!-- start docs -->
-   :end-before: <!-- end docs -->
+   :start-after: .. start-docs
+   :end-before: .. end-docs
 
 .. toctree::
    :maxdepth: 1
