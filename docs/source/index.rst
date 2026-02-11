@@ -6,15 +6,16 @@
 Welcome to QUDOS's documentation!
 =================================
 
+.. include:: ../../README.rst
+   :start-after: <!-- start docs -->
+   :end-before: <!-- end docs -->
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
+   self
+   installation
+   inputs
+   outputs
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
