@@ -5,6 +5,9 @@ Temperature =  3.000000e+02 K
 Applied electric field = (  0.000000e+00,  0.000000e+00,  0.000000e+00 ) kV/cm 
 
 The full, anisotropic elastic tensor is employed in the strain field calculations
+
+Using elastic constants of matrix material
+
 Computing first and second order piezoelectric potential
 
 Shape 0: Supercell matrix (barrier)
@@ -18,9 +21,9 @@ Shape 0: Supercell matrix (barrier)
 	Supercell length along y [nm] = 60.0
 	Supercell length along z [nm] = 35.0
 
-	Strain region supercell length along x [nm] = 180.0000
-	Strain region supercell length along y [nm] = 180.0000
-	Strain region supercell length along z [nm] = 140.0000
+	Strain calculation supercell length along x [nm] = 180.0000
+	Strain calculation supercell length along y [nm] = 180.0000
+	Strain calculation supercell length along z [nm] = 140.0000
 
 	Lattice constant, a [nm] =  5.650300e-01
 

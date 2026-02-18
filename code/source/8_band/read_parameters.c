@@ -477,7 +477,7 @@ void read_parameters( int *N_shape, int *N_Gx, int *N_Gy, int *N_Gz, int *strain
 						input_check[51] = 1;
 					
 					}
-					else if ( strcmp( key, "Eigensolver" ) == 0 ) // Number of real space grid points in each direction for 3D outputs
+					else if ( strcmp( key, "Eigensolver" ) == 0 ) // Indicates whether to use the optimal workspace memory version of the eigensolver (1), or the minimal workspace version of the eigensolver (0).
 					{
 
 						*optimise = ( int ) strtol( value, &endptr, 10 );

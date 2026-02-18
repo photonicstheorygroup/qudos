@@ -10,7 +10,7 @@ QUDOS implements a semi-analytical reciprocal space plane wave expansion method 
 piezoelectric effects, and the effect of an arbitrarily oriented electric field. The PWEM allows for the analytical
 computation of strain fields, piezoelectric potential, electric field potential, and the Hamiltonian
 matrix, for a user-defined calculational supercell. Semiconductors containing
-zinc blende crystal structures are treated using an 8-band k·p Hamiltonian.
+zinc blende crystal structures are treated using an 8-band :math:`\mathbf{k}\cdot\mathbf{p}` Hamiltonian.
 Once constructed for the supplied input geometry, the supercell Hamiltonian is numerically
 diagonalised to obtain the single-particle QD eigenstates. These single-particle eigenstates are
 then employed to compute optical (momentum) and Coulomb matrix elements, expressions for which are analytical in the Fourier coefficients of the eigenstate envelope
@@ -26,8 +26,6 @@ including the ability to treat composition-graded or arbitrarily oriented
 QDs. The core physics library is written in C, employs hybrid MPI-OpenMP parallelisation,
 and exploits fast-Fourier transform and eigensolver routines from Intel's oneMKL
 to accelerate performance.
-
-
 
 QUDOS is released under the terms of the GNU General Public License (GPL) v3.0. Alternative commercial licensing terms may be available from the copyright holders upon request.
 

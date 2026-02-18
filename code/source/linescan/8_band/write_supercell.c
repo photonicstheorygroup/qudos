@@ -54,6 +54,26 @@ void write_supercell( int N_shape, double T, double Fx, double Fy, double Fz, st
 	fprintf( fp1, "\n" );
 
 
+	switch( include_shape_elastic_constants )
+	{
+
+		case 0:
+
+			fprintf( fp1, "\nUsing elastic constants of matrix material\n" );
+
+			break;
+
+		case 1:
+
+			fprintf( fp1, "\nUsing position-dependent elastic constants, with the %d order correction", shape_elastic_constants_order );
+
+			break;
+
+	}
+
+	fprintf( fp1, "\n" );
+
+
 	switch( piezo_order )
 	{
 
@@ -145,9 +165,9 @@ void write_supercell( int N_shape, double T, double Fx, double Fy, double Fz, st
 		fprintf( fp1, "\tSupercell length along z [nm] = %.1f\n", 0.1*supercell[0].L3 );
 		fprintf( fp1, "\n" );
 		
-		fprintf( fp1, "\tStrain region supercell length along x [nm] = %.4f\n", 0.1*supercell[0].SL1 );
-		fprintf( fp1, "\tStrain region supercell length along y [nm] = %.4f\n", 0.1*supercell[0].SL2 );
-		fprintf( fp1, "\tStrain region supercell length along z [nm] = %.4f\n", 0.1*supercell[0].SL3 );
+		fprintf( fp1, "\tStrain calculation supercell length along x [nm] = %.4f\n", 0.1*supercell[0].SL1 );
+		fprintf( fp1, "\tStrain calculation supercell length along y [nm] = %.4f\n", 0.1*supercell[0].SL2 );
+		fprintf( fp1, "\tStrain calculation supercell length along z [nm] = %.4f\n", 0.1*supercell[0].SL3 );
 		fprintf( fp1, "\n" );
 
 	}

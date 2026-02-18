@@ -42,7 +42,9 @@ void write_coulomb_matrix_elements( int Num_VB_States, int Num_CB_States, struct
 	int k_s = 0;
 	int l_s = 0;
 
-	// The Coulomb matrix elements are written to file according to the definition of Viklj in Sec. 2.8 in T. Murphy, PhD Thesis, University College Cork (2025)
+	// The Coulomb matrix elements have been calculated and stored according to the defintion of Vijkl in Eq. 20 in 'Plane wave methodology for single quantum dot electronic structure calculations', Vukmirovic, 2008.
+	// However, the Coulomb matrix elements are written to file according to the definition of Vijkl in Eq. 2.86 in 'Electronic and optical properties of III-Nitride nanostructures', PhD Thesis, S. Patra, University College Cork (2019).
+	// E.g. For the Coulomb matrix elements involving only the hole states, Vijkl from Patra is equal to Viklj from Vukmirovic.
 
 	// Loop each index over hole states
 	for( int i = Num_VB_States - 1; i >= 0; i-- )

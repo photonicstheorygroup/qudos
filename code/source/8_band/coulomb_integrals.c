@@ -23,8 +23,10 @@
 void coulomb_integrals( struct supercell_geometry *supercell, struct material_params *parameters, int *N_states, struct convolution_state *convolution_states, struct convolution_state *convolution_states_reversed, int local_size_conv, struct coulomb_corrections CME_corrections, struct coulomb_matrix_element CME, int type )
 {
 
-	// Note that Vijkl is defined according to Eq. 20 in N. Vukmirovic and S. Tomic, J. Appl. Phys. 103, 103718 (2008), doi: 10.1063/1.2936318
-	// This definition corresponds to Viklj in Sec. 2.8 in T. Murphy, PhD Thesis, University College Cork (2025)
+	// Note that for the Coulomb matrix elements involving only electron states, and only hole states, Vijkl is defined according to Eq. 20 in N. Vukmirovic and S. Tomic, J. Appl. Phys. 103, 103718 (2008), doi: 10.1063/1.2936318
+	// For the direct Coulomb matrix elements involving electron and hole states, Vijkl is defined according to Eq. 20 in N. Vukmirovic and S. Tomic, J. Appl. Phys. 103, 103718 (2008), doi: 10.1063/1.2936318, but where i,j are hole states, and k,l are electron states.
+	// For the exchange Coulomb matrix elements involving electron and hole states, Vijkl is defined according to Eq. 20 in N. Vukmirovic and S. Tomic, J. Appl. Phys. 103, 103718 (2008), doi: 10.1063/1.2936318, but where i,l are hole states, and j,k are electron states.
+	// However, the Coulomb matrix elements are later written to file according to the definition of Vijkl in Eq. 2.86 in 'Electronic and optical properties of III-Nitride nanostructures', PhD Thesis, S. Patra, University College Cork (2019).
 	
 	// Numbers of Vijkl contributions calculated locally in each block before reducing between processes (MPI_Reduce is called for each i iteration) 
 	int N_CME_ee = 2*N_states[1]*2*N_states[1]*2*N_states[1]; // Vijkl involving electron states only

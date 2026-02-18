@@ -15,6 +15,7 @@ Welcome to QUDOS's documentation!
    :caption: Contents:
 
    self
+   capabilities
    installation
    inputs
    outputs
