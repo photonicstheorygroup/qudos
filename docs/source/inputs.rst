@@ -595,11 +595,9 @@ QUDOS supports quaternary alloys of the forms :math:`\text{A}_{x}\text{B}_{1-x}\
 In the case of :math:`\text{A}_{x}\text{B}_{1-x}\text{C}_{y}\text{D}_{1-y}`, the quaternary alloy material parameter :math:`\mathcal{P}(\text{A}_{x}\text{B}_{1-x}\text{C}_{y}\text{D}_{1-y})` is interpolated from the underlying binaries according to:
 
 .. math::
-  \begin{align}
     \mathcal{P}(\text{A}_{x}\text{B}_{1-x}\text{C}_{y}\text{D}_{1-y})&= \frac{x(1-x)\left[y\mathcal{P}(\text{A}_{x}\text{B}_{1-x}\text{C})+(1-y)\mathcal{P}(\text{A}_{x}\text{B}_{1-x}\text{D})\right]}{x(1-x)+y(1-y)} \\
     &+ \frac{y(1-y)\left[x\mathcal{P}(\text{A}_{y}\text{C}_{1-y}\text{D})+(1-x)\mathcal{P}(\text{B}_{y}\text{C}_{1-y}\text{D})\right]}{x(1-x)+y(1-y)} \\
     &-xy(1-x)(1-y)\mathcal{B}(\text{ABCD})\, ,
-  \end{align}
 
 where
 
@@ -614,18 +612,14 @@ QUDOS assumes :math:`\mathcal{B}(\text{ABC})` and :math:`\mathcal{B}(\text{ABCD}
 and :math:`\mathcal{P}(\text{A}\text{B}_{x}\text{C}_{y}\text{D}_{1-x-y})` are given by
 
 .. math::
-  \begin{align}
     \mathcal{P}(\text{A}_{x}\text{B}_{y}\text{C}_{1-x-y}\text{D})= x\mathcal{P}(\text{AD}) + y\mathcal{P}(\text{BD}) + (1-x-y)\mathcal{P}(\text{CD}) - xy\mathcal{B}(\text{ABD}) \\
     -x(1-x-y)\mathcal{B}(\text{ACD})-y(1-x-y)\mathcal{B}(\text{BCD})-xy(1-x-y)\mathcal{B}(\text{ABCD}) \, ,
-  \end{align}
 
 and
 
 .. math::
-  \begin{align}
     \mathcal{P}(\text{A}\text{B}_{x}\text{C}_{y}\text{D}_{1-x-y})= x\mathcal{P}(\text{AB}) + y\mathcal{P}(\text{AC}) + (1-x-y)\mathcal{P}(\text{AD}) - xy\mathcal{B}(\text{ABC}) \\
     -x(1-x-y)\mathcal{B}(\text{ABD})-y(1-x-y)\mathcal{B}(\text{ACD})-xy(1-x-y)\mathcal{B}(\text{ABCD}) \, .
-  \end{align}
 
 The following is a table of the quaternary materials supported by QUDOS, and their associated indices:
 
